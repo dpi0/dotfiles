@@ -261,7 +261,7 @@ alias winback="cd /mnt/c/Users/divyansh/Documents/Backup\ Settings\ \&\ Files"
 alias cdw="cd /home/dpi0/dwnloads"
 alias cdd="cd /home/dpi0/documents"
 
-alias subl="/mnt/c/Program\ Files/Sublime\ Text/subl.exe"
+alias subl="/mnt/c/Users/divyansh/scoop/apps/sublime-text/4-4152/subl.exe"
 
 
 # EXPORTS
@@ -290,7 +290,7 @@ bindkey '^r' _atuin_search_widget
 eval "$(zoxide init zsh --cmd j)"
 eval "$(atuin init zsh)"
 # eval "$(zellij setup --generate-auto-start zsh)"
-
+eval "$(ssh-add ~/.ssh/github_ssh_key &>/dev/null)"
 
 #ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern cursor)
 #ZSH_HIGHLIGHT_STYLES[alias]='fg=#fff,bg=#00236A,bold,underline'

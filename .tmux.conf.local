@@ -379,6 +379,10 @@ bind -n M-Right select-pane -R #!important
 bind -n M-Up select-pane -U #!important
 bind -n M-Down select-pane -D #!important
 
+
+bind-key -n C-S-Left swap-window -t -1\; select-window -t -1
+bind-key -n C-S-Right swap-window -t +1\; select-window -t +1
+
 # Shift arrow to switch windows
 bind -n S-Left  previous-window
 bind -n S-Right next-window
