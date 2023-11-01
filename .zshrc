@@ -1,31 +1,14 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -77,7 +60,7 @@ ZSH_THEME=""
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-HIST_STAMPS="dd/mm/yyyy"
+# HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -88,7 +71,6 @@ HIST_STAMPS="dd/mm/yyyy"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions dirhistory history docker you-should-use copypath copyfile)
-# plugins=(git zsh-autosuggestions zsh-syntax-highlighting dirhistory history docker you-should-use copypath copyfile cp tmux zoxide redis-cli pip python)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,11 +82,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='vim'
-fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -117,18 +99,9 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-# eval "$(tmux)"
-
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
+# IMP: ALIASES & FUNCTIONS
 
 lol()
 {
@@ -178,7 +151,7 @@ alias tn="t new-session -s"
 alias tk="t kill-session -t"
 alias tr="t rename-session -t"
 
-alias lx="exa --icons -a"
+alias lx="eza --icons -a"
 alias l="lx -l"
 alias ls="lx -l"
 alias lt="lx -T"
@@ -198,7 +171,6 @@ alias b="cat"
 alias c="cat"
 alias s="sudo"
 
-# IMP: these two are the main commands
 alias ff="cd \$(fpreview)" # will cd into the dir
 alias ffw="cd \$(fpreviewwin)" # will cd into the dir
 alias fv="fcopy && i" # will cd into the file
@@ -213,7 +185,7 @@ alias cat="bat"
 alias xx="exit"
 alias ping="gping"
 
-alias tree="exa --tree --long"
+alias tree="eza --tree --long"
 
 alias jj="j -"
 
@@ -237,15 +209,29 @@ alias ver="poetry version"
 alias about="poetry about"
 alias req="pip freeze > requirements.txt"
 
+alias status_serv="sudo systemctl status"
+alias list_serv="sudo systemctl list-unit-files"
+alias start_serv="sudo systemctl start"
+alias stop_serv="sudo systemctl stop"
+
+# mark a unit as completely unstartable
+alias block_serv="sudo systemctl mask"
+alias unblock_serv="sudo systemctl unmask"
+
+alias restart_serv="sudo systemctl reload-or-restart"
+alias enable_serv="sudo systemctl enable"
+alias disable_serv="sudo systemctl disable"
+
+
 alias dw="rsync -va --delete /mnt/c/Users/divyansh/Downloads/ $HOME/dwnloads"
 alias back="$HOME/wsl_backup.sh"
 
-alias rem="rm -rf"
+alias rem="rm -rfi"
 
 alias del="trash-put"
 alias dlist="trash-list"
 alias drm="trash-rm"
-alias dclear="trash-empty"
+alias dclearrem="trash-empty"
 alias drest="trash-restore"
 
 alias ex="extract"
@@ -264,38 +250,39 @@ alias cdd="cd /home/dpi0/documents"
 alias subl="/mnt/c/Users/divyansh/scoop/apps/sublime-text/4-4152/subl.exe"
 
 
-# EXPORTS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# IMP: EXPORTS
 
 export PIPENV_VENV_IN_PROJECT=0
-
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-
 export PATH="$PATH:/home/dpi0/.local/bin"
-
 export FZF_DEFAULT_COMMAND="fd --type f"
-
-export PATH="$PATH:/home/dpi0/documents/nvim-linux64/bin"
-
 export ATUIN_NOBIND="true"
-
 # export EDITOR="code --wait"
-
+export EDITOR="vim"
 export PATH=$(pwd)/bin:$PATH
-
+export PATH=$PATH:/usr/local/go/bin
 bindkey '^r' _atuin_search_widget
+export PATH=$PATH:/home/dpi0/go/bin
+export PATH=$PATH:/home/dpi0/go/pkg/
+export PATH=$PATH:/home/dpi0/go/pkg/mod
 
-# EVALS
-
+# DANGER: evals at the end
 eval "$(zoxide init zsh --cmd j)"
 eval "$(atuin init zsh)"
-# eval "$(zellij setup --generate-auto-start zsh)"
-eval "$(ssh-add ~/.ssh/github_ssh_key &>/dev/null)"
-
-#ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern cursor)
-#ZSH_HIGHLIGHT_STYLES[alias]='fg=#fff,bg=#00236A,bold,underline'
-#ZSH_HIGHLIGHT_STYLES[path]='fg=yellow,bold,underline'
-
-
-typeset -A ZSH_HIGHLIGHT_STYLES
-
+eval "$(pyenv init -)"
+eval "$(starship init zsh)"

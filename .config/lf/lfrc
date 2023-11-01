@@ -5,11 +5,6 @@ set icons true
 set bat --color=always --theme=base16 "$1"
 
 
-# set cleaner ~/.config/lf/lf_kitty_clean
-
-
-
-
 #; Archive bindings
 cmd unarchive ${{
   case "$f" in

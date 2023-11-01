@@ -1,4 +1,3 @@
-# : << EOF
 # https://github.com/gpakosz/.tmux
 # (‑●‑●)> dual licensed under the WTFPL v2 license and the MIT license,
 #         without any warranty.
@@ -71,20 +70,20 @@ tmux_conf_theme=enabled
 tmux_conf_theme_colour_1="#080808"    # dark gray
 tmux_conf_theme_colour_2="#303030"    # gray
 tmux_conf_theme_colour_3="#8a8a8a"    # light gray
-tmux_conf_theme_colour_4="#00afff"    # light blue
-tmux_conf_theme_colour_5="#ffff00"    # yellow
+tmux_conf_theme_colour_4="#0eff00"    # light blue..green
+tmux_conf_theme_colour_5="#ffb84d"    # yellow..ishwhite(this is notif color)
 tmux_conf_theme_colour_6="#080808"    # dark gray
 tmux_conf_theme_colour_7="#e4e4e4"    # white
 tmux_conf_theme_colour_8="#080808"    # dark gray
-tmux_conf_theme_colour_9="#ffff00"    # yellow
-tmux_conf_theme_colour_10="#ff00af"   # pink
+tmux_conf_theme_colour_9="#ffd802"    # yellow
+tmux_conf_theme_colour_10="#ff003b"   # pink
 tmux_conf_theme_colour_11="#5fff00"   # green
 tmux_conf_theme_colour_12="#8a8a8a"   # light gray
 tmux_conf_theme_colour_13="#e4e4e4"   # white
 tmux_conf_theme_colour_14="#080808"   # dark gray
 tmux_conf_theme_colour_15="#080808"   # dark gray
-tmux_conf_theme_colour_16="#d70000"   # red
-tmux_conf_theme_colour_17="#e4e4e4"   # white
+tmux_conf_theme_colour_16="#ff4500"   # red..orange
+tmux_conf_theme_colour_17="#f2b199"   # white..orangishwhite
 
 # default theme (ansi)
 #tmux_conf_theme_colour_1="colour0"
@@ -372,14 +371,14 @@ set -g mouse on
 
 # if you don't want Oh my tmux! to alter a binding, use #!important
 bind c new-window -c '#{pane_current_path}' #!important
-bind / split-window -h #!important
-bind ? split-window -v #!important
+bind k split-window -h #!important
+bind m split-window -v #!important
 bind -n M-Left select-pane -L #!important
 bind -n M-Right select-pane -R #!important
 bind -n M-Up select-pane -U #!important
 bind -n M-Down select-pane -D #!important
 
-
+# Ctrl+Shift to move windows
 bind-key -n C-S-Left swap-window -t -1\; select-window -t -1
 bind-key -n C-S-Right swap-window -t +1\; select-window -t +1
 
@@ -387,8 +386,9 @@ bind-key -n C-S-Right swap-window -t +1\; select-window -t +1
 bind -n S-Left  previous-window
 bind -n S-Right next-window
 
-
+# Creating & Removing Panes
 bind-key -n C-x confirm-before kill-window
+bind-key -n C-z confirm-before kill-pane
 bind-key -n C-n new-window
 
 
