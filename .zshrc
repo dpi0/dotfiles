@@ -167,8 +167,6 @@ alias fpreviewwin="fwin --preview 'bat --color=always {}' --preview-window '~3'"
 alias fcopy="fpreview | xclip -selection clipboard"
 alias fcopywin="fpreviewwin | xclip -selection clipboard"
 
-alias b="cat"
-alias c="cat"
 alias s="sudo"
 
 alias ff="cd \$(fpreview)" # will cd into the dir
@@ -207,7 +205,7 @@ alias search="poetry search"
 alias lock="poetry lock"
 alias ver="poetry version"
 alias about="poetry about"
-alias req="pip freeze > requirements.txt"
+alias ppr="pip freeze > requirements.txt"
 
 alias status_serv="sudo systemctl status"
 alias list_serv="sudo systemctl list-unit-files"
@@ -249,8 +247,9 @@ alias cdd="cd /home/dpi0/documents"
 
 alias subl="/mnt/c/Users/divyansh/scoop/apps/sublime-text/4-4152/subl.exe"
 
-
-
+alias vim=nvim
+alias vi=nvim
+alias v=nvim
 
 
 
@@ -280,9 +279,16 @@ bindkey '^r' _atuin_search_widget
 export PATH=$PATH:/home/dpi0/go/bin
 export PATH=$PATH:/home/dpi0/go/pkg/
 export PATH=$PATH:/home/dpi0/go/pkg/mod
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # DANGER: evals at the end
 eval "$(zoxide init zsh --cmd j)"
 eval "$(atuin init zsh)"
 eval "$(pyenv init -)"
 eval "$(starship init zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
