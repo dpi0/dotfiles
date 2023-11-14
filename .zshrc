@@ -179,6 +179,8 @@ alias fff="rg"
 alias re="exec zsh"
 
 alias cat="bat"
+alias c="bat"
+alias s="subl"
 
 alias xx="exit"
 alias ping="gping"
@@ -272,7 +274,7 @@ export PATH="$PATH:/home/dpi0/.local/bin"
 export FZF_DEFAULT_COMMAND="fd --type f"
 export ATUIN_NOBIND="true"
 # export EDITOR="code --wait"
-export EDITOR="vim"
+export EDITOR="subl"
 export PATH=$(pwd)/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 bindkey '^r' _atuin_search_widget
