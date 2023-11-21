@@ -2,13 +2,13 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -101,171 +101,12 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-# IMP: ALIASES & FUNCTIONS
+# ALIASES & FUNCTIONS
 
-lol()
-{
-    if [ -t 1 ]; then
-        "$@" | lolcat
-    else
-        "$@"
-    fi
-}
-
-function zip() {
-    if [ -z "$1" ]; then
-        echo "Usage: tarzip <filename>"
-        return 1
-    fi
-    tar -czvf "$1.tar.gz" "$1"
-}
+source ~/.dotfiles/zsh/.zsh_aliases
 
 
-extract() {
-  if [ -f "$1" ]; then
-    case "$1" in
-      *.zip) unzip "$1" ;;
-      *.tar.gz) tar -xzvf "$1" ;;
-      *.tar.bz2) tar -xjvf "$1" ;;
-      *.tar) tar -xvf "$1" ;;
-      *) echo "Unsupported format" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
-}
-
-function cdf () { [ -f "$1" ] && { cd "$(dirname "$1")"; } || { cd "$1"; } ; pwd; }
-# to cd into a file's parent dir
-
-i() {
-  local clipboard_content=$(xclip -selection clipboard -o)
-  cdf "$clipboard_content"
-}
-
-alias apt="sudo apt"
-alias t="tmux"
-alias ta="t a -t"
-alias tls="t ls"
-alias tn="t new-session -s"
-alias tk="t kill-session -t"
-alias tr="t rename-session -t"
-
-alias lx="eza --icons -a"
-alias l="lx -l"
-alias ls="lx -l"
-alias lt="lx -T"
-
-alias zshrc="code ~/.zshrc"
-
-alias f="fd --full-path -H"
-
-alias fhome="f . $HOME | fzf"
-alias fwin="f . /mnt/c/users/divyansh/documents | fzf"
-alias fpreview="fhome --preview 'bat --color=always {}' --preview-window '~3'"
-alias fpreviewwin="fwin --preview 'bat --color=always {}' --preview-window '~3'"
-alias fcopy="fpreview | xclip -selection clipboard"
-alias fcopywin="fpreviewwin | xclip -selection clipboard"
-
-alias s="sudo"
-
-alias ff="cd \$(fpreview)" # will cd into the dir
-alias ffw="cd \$(fpreviewwin)" # will cd into the dir
-alias fv="fcopy && i" # will cd into the file
-
-
-alias fff="rg"
-
-alias re="exec zsh"
-
-alias cat="bat"
-alias c="bat"
-alias s="subl"
-
-alias xx="exit"
-alias ping="gping"
-
-alias tree="eza --tree --long"
-
-alias jj="j -"
-
-alias history="history | lolcat"
-
-alias ps="ps | lolcat"
-alias date="date | lolcat"
-
-alias py="python"
-alias ppf="pip freeze | lolcat"
-alias install="poetry add"
-alias remove="poetry remove"
-alias update="poetry update"
-alias init="poetry init"
-alias new="poetry new"
-alias list="poetry show -tlav"
-alias shl="poetry shell"
-alias search="poetry search"
-alias lock="poetry lock"
-alias ver="poetry version"
-alias about="poetry about"
-alias ppr="pip freeze > requirements.txt"
-
-alias status_serv="sudo systemctl status"
-alias list_serv="sudo systemctl list-unit-files"
-alias start_serv="sudo systemctl start"
-alias stop_serv="sudo systemctl stop"
-
-# mark a unit as completely unstartable
-alias block_serv="sudo systemctl mask"
-alias unblock_serv="sudo systemctl unmask"
-
-alias restart_serv="sudo systemctl reload-or-restart"
-alias enable_serv="sudo systemctl enable"
-alias disable_serv="sudo systemctl disable"
-
-
-alias dw="rsync -va --delete /mnt/c/Users/divyansh/Downloads/ $HOME/dwnloads"
-alias back="$HOME/wsl_backup.sh"
-
-alias rem="rm -rfi"
-
-alias del="trash-put"
-alias dlist="trash-list"
-alias drm="trash-rm"
-alias dclearrem="trash-empty"
-alias drest="trash-restore"
-
-alias ex="extract"
-
-alias open="explorer.exe ."
-
-alias crlist="crontab -l"
-alias crnew="crontab -e"
-alias crstatus="sudo cat /var/log/syslog | rg CRON"
-
-
-alias winback="cd /mnt/c/Users/divyansh/Documents/Backup\ Settings\ \&\ Files"
-alias cdw="cd /home/dpi0/dwnloads"
-alias cdd="cd /home/dpi0/documents"
-
-alias subl="/mnt/c/Users/divyansh/scoop/apps/sublime-text/4-4152/subl.exe"
-
-alias vim=nvim
-alias vi=nvim
-alias v=nvim
-
-
-
-
-
-
-
-
-
-
-
-
-
-# IMP: EXPORTS
+# EXPORTS
 
 export PIPENV_VENV_IN_PROJECT=0
 export PYENV_ROOT="$HOME/.pyenv"
@@ -274,7 +115,7 @@ export PATH="$PATH:/home/dpi0/.local/bin"
 export FZF_DEFAULT_COMMAND="fd --type f"
 export ATUIN_NOBIND="true"
 # export EDITOR="code --wait"
-export EDITOR="subl"
+export EDITOR="vim"
 export PATH=$(pwd)/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 bindkey '^r' _atuin_search_widget
@@ -285,7 +126,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# DANGER: evals at the end
+
+
+
+# evals at the end
 eval "$(zoxide init zsh --cmd j)"
 eval "$(atuin init zsh)"
 eval "$(pyenv init -)"

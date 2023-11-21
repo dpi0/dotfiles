@@ -1,0 +1,82 @@
+source ~/.dotfiles/zsh/.zsh_functions
+
+
+alias apt="sudo apt"
+alias t="tmux"
+alias ta="t a -t"
+alias tls="t ls"
+alias tn="t new-session -s"
+alias tk="t kill-session -t"
+alias tr="t rename-session -t"
+
+alias lx="eza --icons -a"
+alias l="lx -l"
+alias ls="lx -l"
+alias lt="lx -T"
+
+alias s="sudo"
+alias c="bat"
+alias cat="bat"
+alias xx="exit"
+alias ping="gping"
+alias tree="eza --tree --long"
+alias gg="googler"
+alias re="exec zsh"
+alias jj="j -"
+alias history="history | lolcat"
+alias ps="ps | lolcat"
+alias date="date | lolcat"
+
+alias py="python3"
+alias ppf="pip freeze | lolcat"
+alias install="poetry add"
+alias remove="poetry remove"
+alias update="poetry update"
+alias init="poetry init"
+alias new="poetry new"
+alias list="poetry show -tlav"
+alias shl="poetry shell"
+alias search="poetry search"
+alias lock="poetry lock"
+alias ver="poetry version"
+alias about="poetry about"
+alias ppr="pip freeze > requirements.txt"
+
+alias status_serv="sudo systemctl status"
+alias list_serv="sudo systemctl list-unit-files"
+alias start_serv="sudo systemctl start"
+alias stop_serv="sudo systemctl stop"
+alias block_serv="sudo systemctl mask" # mark a unit as completely unstartable
+alias unblock_serv="sudo systemctl unmask"
+alias restart_serv="sudo systemctl reload-or-restart"
+alias enable_serv="sudo systemctl enable"
+alias disable_serv="sudo systemctl disable"
+
+alias rem="rm -rfi"
+alias del="trash-put"
+alias dlist="trash-list"
+alias drm="trash-rm"
+alias dclearrem="trash-empty"
+alias drest="trash-restore"
+
+alias ex="extract"
+
+alias opene="explorer.exe ."
+alias open="nautilus ."
+
+alias crlist="crontab -l"
+alias crnew="crontab -e"
+alias crstatus="sudo cat /var/log/syslog | rg CRON"
+
+#alias vim=nvim
+alias vi=vim
+alias v=vim
+
+alias winback="cd /mnt/c/Users/divyansh/Documents/Backup\ Settings\ \&\ Files"
+alias cdw="cd /media/dpi0/shared/dwnloads"
+alias cdww="cd /mnt/s/dwnloads"
+alias cdd="cd /media/dpi0/shared/dev"
+# alias cddd ="cd /mnt/s/dev"
+alias subl="/mnt/c/Users/divyansh/scoop/apps/sublime-text/current/subl.exe"
+# alias dw="rsync -va --delete /mnt/c/Users/divyansh/Downloads/ $HOME/dwnloads"
+# alias back="$HOME/wsl_backup.sh"

@@ -1,0 +1,80 @@
+
+lol()
+{
+    if [ -t 1 ]; then
+        "$@" | lolcat
+    else
+        "$@"
+    fi
+}
+
+zip() {
+    if [ -z "$1" ]; then
+        echo "Usage: tarzip <filename>"
+        return 1
+    fi
+    tar -czvf "$1.tar.gz" "$1"
+}
+
+
+extract() {
+  if [ -f "$1" ]; then
+    case "$1" in
+      *.zip) unzip "$1" ;;
+      *.tar.gz) tar -xzvf "$1" ;;
+      *.tar.xz) tar -xJf "$1" ;;
+      *.tar.bz2) tar -xjvf "$1" ;;
+      *.tar) tar -xvf "$1" ;;
+      *) echo "Unsupported format" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+cdf () { [ -f "$1" ] && { cd "$(dirname "$1")"; } || { cd "$1"; } ; pwd; }
+# to cd into a file's parent dir
+
+i() {
+    local clipboard_content=$(xclip -selection clipboard -o)
+    cdf "$clipboard_content"
+}
+
+alias fd="fd --full-path -H"
+f_long() {
+  # List hidden files and directories using fd, pipe the result to fzf-tmux
+  # for interactive selection, and use bat to preview the selected file with syntax highlighting.
+  fd --hidden . | fzf-tmux --preview 'bat --color=always {}' --preview-window '~3'
+}
+
+# Define the main function f
+f() {
+  # Check if no argument is provided
+  if [ -z "$1" ]; then
+    # Read the results from f_long and iterate over them
+    while read -r result; do
+      # If the result is a directory, change to that directory and call f_long
+      # Otherwise, display the content of the file using cat
+      [ -d "$result" ] && (cd "$result" && f_long) || subl "$result"
+    done < <(f_long)
+  else
+    # If an argument is provided
+    if [ -e "$1" ]; then
+      # Check if the argument is a file
+      if [ -f "$1" ]; then
+        # Display the content of the file using cat
+        subl "$1"
+      # Check if the argument is a directory
+      elif [ -d "$1" ]; then
+        # Change to the directory and call the f function recursively
+        (cd "$1" && f)
+      else
+        # Display an error message if the argument is neither a file nor a directory
+        echo "Not a file or directory: $1"
+      fi
+    else
+      # Display an error message if the path specified does not exist
+      echo "Path does not exist: $1"
+    fi
+  fi
+}
