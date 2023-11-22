@@ -3,6 +3,8 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export DOTFILES="$HOME/.dotfiles"
+export CONFIG="$HOME/.config"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -103,7 +105,7 @@ source $ZSH/oh-my-zsh.sh
 
 # ALIASES & FUNCTIONS
 
-source ~/.dotfiles/zsh/.zsh_aliases
+source $DOTFILES/zsh/.zsh_aliases
 
 
 # EXPORTS
