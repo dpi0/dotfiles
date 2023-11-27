@@ -2,6 +2,7 @@ source $DOTFILES/zsh/.zsh_functions
 
 # --- Terminal Aliases ---
 alias apt="sudo apt"
+alias n="sudo nala"
 alias t="tmux"
 alias ta="t a -t"
 alias tls="t ls"
@@ -46,15 +47,15 @@ alias about="poetry about"
 alias ppr="pip freeze > requirements.txt"
 
 # --- Service Management Aliases ---
-alias status_serv="sudo systemctl status"
-alias list_serv="sudo systemctl list-unit-files"
-alias start_serv="sudo systemctl start"
-alias stop_serv="sudo systemctl stop"
-alias block_serv="sudo systemctl mask"
-alias unblock_serv="sudo systemctl unmask"
-alias restart_serv="sudo systemctl reload-or-restart"
-alias enable_serv="sudo systemctl enable"
-alias disable_serv="sudo systemctl disable"
+alias statusServ="sudo systemctl status"
+alias listServ="sudo systemctl list-unit-files"
+alias startServ="sudo systemctl start"
+alias stopServ="sudo systemctl stop"
+alias blockServ="sudo systemctl mask"
+alias unblockServ="sudo systemctl unmask"
+alias restartServ="sudo systemctl reload-or-restart"
+alias enableServ="sudo systemctl enable"
+alias disableServ="sudo systsemctl disable"
 
 # --- File Operations Aliases ---
 alias rem="rm -rfi"
@@ -81,10 +82,13 @@ alias cz=chezmoi
 
 # --- Custom Directories Aliases ---
 alias winback="cd /mnt/c/Users/divyansh/Documents/Backup\ Settings\ \&\ Files"
-alias cdw="cd /media/dpi0/shared/dwnloads"
+alias cdw="cd /mnt/shared/dwnloads"
 alias cdww="cd /mnt/s/dwnloads"
-alias cdd="cd /media/dpi0/shared/dev"
+alias cdd="cd /mnt/shared/dev"
 # alias cddd="cd /mnt/s/dev"
-alias subl="/mnt/c/Users/divyansh/scoop/apps/sublime-text/current/subl.exe"
+# alias subl="/mnt/c/Users/divyansh/scoop/apps/sublime-text/current/subl.exe"
 # alias dw="rsync -va --delete /mnt/c/Users/divyansh/Downloads/ $HOME/dwnloads"
 # alias back="$HOME/wsl_backup.sh"
+
+alias mk="minikube"
+alias kb="kubectl"

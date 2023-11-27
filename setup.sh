@@ -19,7 +19,7 @@ ln -s $DOTFILES/nix $CONFIG/nix
 ln -sf $DOTFILES/.ssh $HOME/.ssh
 
 sublime-text
-ln -sf $DOTFILES/sublime_text/themes/sublime_dark.tmTheme $CONFIG/sublime-text/Packages/sublime_dark.tmTheme
-ln -sf $DOTFILES/sublime_text/Packages/User/pref.sublime-settings $CONFIG/sublime-text/Packages/User/Preferences.sublime-settings
-ln -sf $DOTFILES/sublime_text/Packages/User/keybindings.sublime-keymap $CONFIG/sublime-text/Packages/User/keybindings.sublime-keymap
-ln -s $DOTFILES/sublime_text/Packages/User/adaptive.sublime-theme $CONFIG/sublime-text/Packages/User/Adaptive.sublime-theme
+#ln -sf $DOTFILES/sublime_text/themes/sublime_dark.tmTheme $CONFIG/sublime-text/Packages/sublime_dark.tmTheme
+#ln -sf $DOTFILES/sublime_text/Packages/User/pref.sublime-settings $CONFIG/sublime-text/Packages/User/Preferences.sublime-settings
+#ln -sf $DOTFILES/sublime_text/Packages/User/keybindings.sublime-keymap $CONFIG/sublime-text/Packages/User/keybindings.sublime-keymap
+#ln -s $DOTFILES/sublime_text/Packages/User/adaptive.sublime-theme $CONFIG/sublime-text/Packages/User/Adaptive.sublime-theme

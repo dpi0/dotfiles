@@ -25,3 +25,6 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+[safe]
+	directory = /shared/dev/zola/myplace
+	directory = /mnt/shared/dev/zola/echo
