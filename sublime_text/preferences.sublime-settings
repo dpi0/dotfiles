@@ -1,0 +1,41 @@
+{
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"theme": "Adaptive.sublime-theme",
+	"font_face": "JetBrainsMono Nerd Font",
+	"font_options": [
+		"gray_antialias",
+	    "subpixel_antialias",
+	],
+	"save_on_focus_lost": true,
+	"spell_check": true,
+	"word_wrap": "true",
+	// "color_scheme": "gruvbox (Dark) (Hard).sublime-color-scheme",	
+	"color_scheme": "Packages/sublime_dark.tmTheme",
+	"font_size": 13,
+	"line_padding_bottom": 4,
+	"line_padding_top": 4,
+	"tab_completion": true,
+	"auto_complete_selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc, text",
+	"added_words":
+	[
+		"disadv",
+		"strat",
+		"amongst",
+		"strats",
+		"programmes",
+	],
+	"indent_guide_options":
+    [
+        "draw_normal",
+        "draw_active",
+        "solid"
+	],
+	"default_dir": "C:\\Users\\divyansh\\Documents\\go\\NOTES",
+    "default_new_file_syntax": "Packages/Text/Plain text.tmLanguage",
+    "use_current_file_syntax": false,
+
+	"index_files": true,
+}
