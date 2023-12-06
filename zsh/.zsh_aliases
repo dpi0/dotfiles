@@ -1,6 +1,7 @@
 source $DOTFILES/zsh/.zsh_functions
 
 # --- Terminal Aliases ---
+
 alias apt="sudo apt"
 alias n="sudo nala"
 alias t="tmux"
@@ -11,12 +12,14 @@ alias tk="t kill-session -t"
 alias tr="t rename-session -t"
 
 # --- File Management Aliases ---
+
 alias lx="eza --icons -a"
 alias l="eza --icons -a -l"
 alias ls="eza --icons -a -l"
 alias lt="eza --icons -a -T"
 
 # --- System Aliases ---
+
 alias s="sudo"
 alias c="bat"
 alias cat="bat"
@@ -25,7 +28,7 @@ alias xx="exit"
 alias tree="eza --tree --long"
 alias gg="googler"
 alias re="exec zsh"
-alias tre="tmux source-file $CONFIG/tmux/tmux.conf"
+alias tre="tmux source-file $DOTFILES/tmux/tmux.conf"
 alias jj="j -"
 alias history="history | lolcat"
 alias h="history | lolcat"
@@ -33,6 +36,7 @@ alias ps="ps | lolcat"
 alias date="date | lolcat"
 
 # --- Python and Poetry Aliases ---
+
 alias py="python3"
 alias ppf="pip freeze | lolcat"
 alias install="poetry add"
@@ -49,6 +53,7 @@ alias about="poetry about"
 alias ppr="pip freeze > requirements.txt"
 
 # --- docker ---
+
 alias docker="sudo docker"
 alias d="sudo docker"
 alias di="d images"
@@ -76,14 +81,13 @@ alias dsto="d stop"
 alias drm="d rm"
 alias dstats="d container stats"
 
-
 alias dlogin="d login -u"
 alias dpush="d push"
-alias dsrch="d search" 
-alias dpull="d pull" 
-
+alias dsrch="d search"
+alias dpull="d pull"
 
 # --- Service Management Aliases ---
+
 alias statusServ="sudo systemctl status"
 alias listServ="sudo systemctl list-unit-files"
 alias startServ="sudo systemctl start"
@@ -95,6 +99,7 @@ alias enableServ="sudo systemctl enable"
 alias disableServ="sudo systemctl disable"
 
 # --- File Operations Aliases ---
+
 alias rem="rm -rfi"
 alias del="trash-put"
 alias dlist="trash-list"
@@ -103,83 +108,91 @@ alias dclearrem="trash-empty"
 alias drest="trash-restore"
 
 # --- Archive Extraction Alias ---
+
 alias ex="extract"
 
 # --- File Explorer Aliases ---
+
 alias opene="explorer.exe ."
 alias open="nautilus ."
 
 # --- Editor Aliases ---
+
 alias vim=nvim
 alias vi=vim
 alias v=nvim
 
 # --- Config Management Alias ---
+
 alias cz=chezmoi
 
 # --- Custom Directories Aliases ---
+
 alias winback="cd /mnt/c/Users/divyansh/Documents/Backup\ Settings\ \&\ Files"
 alias cdw="cd /run/media/dpi0/data/dwnloads"
 alias cdd="cd $HOME/dev"
 alias cdww="cd /mnt/s/dwnloads"
+
 # alias cddd="cd /mnt/s/dev"
+
 # alias subl="/mnt/c/Users/divyansh/scoop/apps/sublime-text/current/subl.exe"
+
 # alias dw="rsync -va --delete /mnt/c/Users/divyansh/Downloads/ $HOME/dwnloads"
+
 # alias back="$HOME/wsl_backup.sh"
 
 alias mk="minikube"
 alias kb="kubectl"
 
-
 # --- paru ---
-alias p='paru'      	# alias for "paru -Syu"
-alias pi='paru -S'      # Update/Install a specific package
-alias pu='paru -Sua'      # Upgrade AUR packages
-alias plu='paru -Qua'      # Show all available AUR updates
-alias pr='paru -R'      # remove the package only
-alias prsun='paru -Rsun'      # remove the package, "s" unnecessary dependencies, "u" unneeded packages, "n" it's config files
 
-alias pch='pacman -Qi'            # Detailed information about a specific installed package i.e., pcheck
-alias pchf='pacman -Ql'            # What files does this package have? i.e., pcheckfiles
-alias pcho='pacman -Qo'            # Who owns this package? i.e., pcheckowner
+alias p='paru' # alias for "paru -Syu"
+alias pi='paru -S' # Update/Install a specific package
+alias pu='paru -Sua' # Upgrade AUR packages
+alias plu='paru -Qua' # Show all available AUR updates
+alias pr='paru -R' # remove the package only
+alias prsun='paru -Rsun' # remove the package, "s" unnecessary dependencies, "u" unneeded packages, "n" it's config files
 
-
+alias pch='pacman -Qi' # Detailed information about a specific installed package i.e., pcheck
+alias pchf='pacman -Ql' # What files does this package have? i.e., pcheckfiles
+alias pcho='pacman -Qo' # Who owns this package? i.e., pcheckowner
 
 #paru -G <target> -- Download the PKGBUILD and related files of <target>.
 #paru -Gp <target> -- Print the PKGBUILD of <target>.
 #paru -Gc <target> -- Print the AUR comments of <target>.
-#paru --gendb -- Generate the devel database for tracking *-git packages. This is only needed when you initially start using paru.
+#paru --gendb -- Generate the devel database for tracking \*-git packages. This is only needed when you initially start using paru.
 #paru -Bi . -- Build and install a PKGBUILD in the current directory.
 
 # --- pacman ---
-#alias pau='sudo pacman -S'      # Update/Install a specific package
-alias paua='sudo pacman -Sy'      # Update the complete package list
-alias paufa='sudo pacman -Syy'      # Forces a refresh of the package database even if it appears up to date
-alias pauua='sudo pacman -Syu'      # Update and upgrade all system packages.
 
-alias pail='sudo pacman -U'      # Install a package from a local file
+#alias pau='sudo pacman -S' # Update/Install a specific package
+alias paua='sudo pacman -Sy' # Update the complete package list
+alias paufa='sudo pacman -Syy' # Forces a refresh of the package database even if it appears up to date
+alias pauua='sudo pacman -Syu' # Update and upgrade all system packages.
 
-alias par='sudo pacman -R'        # Remove the specified package but retain its dependencies if they are required by other installed packages
-alias pars='sudo pacman -Rs'     # Remove a package and its dependencies that are not required by any other installed packages
-alias parn='sudo pacman -Rn'     # Remove the specified package and its configuration files
-alias parc='sudo pacman -Rc'     # Remove the specified package along with its configuration files. It also removes dependencies that are not required by other installed packages
-alias paaru='sudo pacman -Ru'     # Remove the specified package and its unneeded dependencies. It is more aggressive than -Rs in removing dependencies
-alias parsu='sudo pacman -Rsu'     # Perform a system upgrade by removing packages that are no longer in the repositories and upgrade the system
-alias parsun='sudo pacman -Rsun'     # Force the removal of packages even if they are required by other installed packages and remove unneeded dependencies.
-alias parsc='sudo pacman -Rsc'     # Remove the specified package, its configuration files, and dependencies that are not required by other installed packages.
-alias parns='sudo pacman -Rns'     # Remove a package, its configuration, and all unwanted dependencies.
-alias paro='sudo pacman -Rns $(pacman -Qdtq)'            # Uninstall unneeded packages
+alias pail='sudo pacman -U' # Install a package from a local file
 
-alias pal='pacman -Q'            # List all installed packages on the system along with their version numbers.
-alias palu='pacman -Qu'            # List all packages that have updates available in the repositories.
-alias paldt='pacman -Qdt'            # List orphaned packages, i.e., packages that were installed as dependencies but are no longer required by any explicitly installed package. List unneeded packages
+alias par='sudo pacman -R' # Remove the specified package but retain its dependencies if they are required by other installed packages
+alias pars='sudo pacman -Rs' # Remove a package and its dependencies that are not required by any other installed packages
+alias parn='sudo pacman -Rn' # Remove the specified package and its configuration files
+alias parc='sudo pacman -Rc' # Remove the specified package along with its configuration files. It also removes dependencies that are not required by other installed packages
+alias paaru='sudo pacman -Ru' # Remove the specified package and its unneeded dependencies. It is more aggressive than -Rs in removing dependencies
+alias parsu='sudo pacman -Rsu' # Perform a system upgrade by removing packages that are no longer in the repositories and upgrade the system
+alias parsun='sudo pacman -Rsun' # Force the removal of packages even if they are required by other installed packages and remove unneeded dependencies.
+alias parsc='sudo pacman -Rsc' # Remove the specified package, its configuration files, and dependencies that are not required by other installed packages.
+alias parns='sudo pacman -Rns' # Remove a package, its configuration, and all unwanted dependencies.
+alias paro='sudo pacman -Rns $(pacman -Qdtq)' # Uninstall unneeded packages
 
-alias pale='pacman -Qe'           # Explicitly installed packages are the ones that you specifically requested to be installed. It excludes packages that were installed as dependencies of other packages.
-alias palii='pacman -Qii'            # Extended information about explicitly installed packages.
+alias pal='pacman -Q' # List all installed packages on the system along with their version numbers.
+alias palu='pacman -Qu' # List all packages that have updates available in the repositories.
+alias paldt='pacman -Qdt' # List orphaned packages, i.e., packages that were installed as dependencies but are no longer required by any explicitly installed package. List unneeded packages
 
-alias pat='pactree'            # What does pkg depend on?
-alias patr='pactree -r'            # What depends on pkg?
+alias pale='pacman -Qe' # Explicitly installed packages are the ones that you specifically requested to be installed. It excludes packages that were installed as dependencies of other packages.
+alias palii='pacman -Qii' # Extended information about explicitly installed packages.
 
-alias pas='pacman -Ss'            # Search for a package or packages in the repositories.
-alias pasi='pacman -Si'           # Display information about a given package located in the repositories.
-alias pasc='pacman -Qs'           # Search for a package or packages in the local database.
+alias pat='pactree' # What does pkg depend on?
+alias patr='pactree -r' # What depends on pkg?
+
+alias pas='pacman -Ss' # Search for a package or packages in the repositories.
+alias pasi='pacman -Si' # Display information about a given package located in the repositories.
+alias pasc='pacman -Qs' # Search for a package or packages in the local database.
