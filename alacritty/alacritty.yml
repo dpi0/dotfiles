@@ -14,19 +14,19 @@ font:
   bold_italic:
     family: JetBrainsMono Nerd Font
     style: Bold Italic
-  size: 14
+  size: 9
 
 draw_bold_text_with_bright_colors: true
 
 
 import:
-  - ~/.config/alacritty/themes/catppuccin_mocha.yaml
+  - ~/.config/alacritty/themes/gruvbox_dark.yaml
 
 
 window:
   decorations: full
   startup_mode: Fullscreen
-  opacity: 0.95
+  opacity: 1.00
   dynamic_padding: false
   padding:
     x: 5

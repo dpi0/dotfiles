@@ -129,9 +129,12 @@ alias cz=chezmoi
 # --- Custom Directories Aliases ---
 
 alias winback="cd /mnt/c/Users/divyansh/Documents/Backup\ Settings\ \&\ Files"
-alias cdw="cd /run/media/dpi0/data/dwnloads"
-alias cdd="cd $HOME/dev"
+alias cdw="cd /mnt/data/dwnloads"
+alias cdd="cd /mnt/data/dev"
 alias cdww="cd /mnt/s/dwnloads"
+#alias subl="ss"
+
+
 
 # alias cddd="cd /mnt/s/dev"
 
