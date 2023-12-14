@@ -1,0 +1,21 @@
+{
+	"debug.console.fontFamily": "JetBrainsMono Font",
+	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+	"terminal.integrated.fontSize": 15,  
+	"editor.fontFamily": "JetBrainsMono Nerd Font",
+	"editor.fontSize": 14,
+	"editor.lineNumbers": "relative",
+	"workbench.iconTheme": "vscode-icons",
+	"workbench.colorTheme": "Gruvbox Dark Hard",
+
+	// --- indent (currenly using tabs with size = 4) ---
+	"editor.wordWrap": "on",
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+
+
+	"files.autoSave": "onFocusChange",
+	"workbench.productIconTheme": "fluent-icons",
+	"window.menuBarVisibility": "toggle",
+	"window.zoomLevel": 1,
+}
