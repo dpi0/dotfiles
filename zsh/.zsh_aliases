@@ -24,16 +24,15 @@ alias s="sudo"
 alias c="bat"
 alias cat="bat"
 alias xx="exit"
-#alias ping="gping"
+alias ping="gping"
 alias tree="eza --tree --long"
-alias gg="googler"
 alias re="exec zsh"
 alias tre="tmux source-file $DOTFILES/tmux/tmux.conf"
 alias jj="j -"
-alias history="history | lolcat"
 alias h="history | lolcat"
 alias ps="ps | lolcat"
 alias date="date | lolcat"
+alias hct="hyprctl"
 
 # --- Python and Poetry Aliases ---
 
@@ -130,6 +129,9 @@ alias cz=chezmoi
 
 alias winback="cd /mnt/c/Users/divyansh/Documents/Backup\ Settings\ \&\ Files"
 alias cdw="cd /mnt/data/dwnloads"
+alias cdn="cd /mnt/data/notes"
+alias cdi="cd /mnt/data/icons"
+alias cds="cd /mnt/data/screenshots"
 alias cdd="cd /mnt/data/dev"
 alias cdww="cd /mnt/s/dwnloads"
 #alias subl="ss"

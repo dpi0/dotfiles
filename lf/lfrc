@@ -1,11 +1,10 @@
-# #@ Basic Settings
+# -------- BASIC SETTINGS --------
 set hidden true
 set ignorecase true
 set icons true
-set bat --color=always --theme=base16 "$1"
+set cursorpreviewfmt "\033[7m"
 
-
-#; Archive bindings
+# -------- ARCHIVE HANDLING --------
 cmd unarchive ${{
   case "$f" in
       *.zip) unzip "$f" ;;
@@ -16,7 +15,7 @@ cmd unarchive ${{
   esac
 }}
 
-#; Trash bindings
+# -------- TRASH --------
 cmd trash ${{
   files=$(printf "$fx" | tr '\n' ';')
   while [ "$files" ]; do
@@ -32,7 +31,7 @@ cmd trash ${{
 }}
 
 
-#; CUSTOM FUNCTIONS 
+# -------- CUSTOM FUNCTIONS -------- 
 cmd mkdir ${{
   printf "Directory Name: "
   read ans
@@ -46,16 +45,16 @@ cmd mkfile ${{
 }}
 
 
-#; PLUGINS
-#, exa
+# -------- PLUGINS --------
+# --- eza --- 
+# provide the file information shown in the bottom left corner
 cmd on-select &{{
-    lf -remote "send $id set statfmt \"$(exa -ld --color=always "$f")\""
-    bat $f
+    lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f")\""
 }}
 
-#, fzf
+# --- fzf ---
 cmd fzf_jump ${{
-    res="$(fd . $HOME | fzf --reverse --preview --header='Jump to location')"
+    res="$(find . -maxdepth 1 | fzf --reverse --header='Jump to location')"
     if [ -n "$res" ]; then
         if [ -d "$res" ]; then
             cmd="cd"
@@ -66,9 +65,9 @@ cmd fzf_jump ${{
         lf -remote "send $id $cmd \"$res\""
     fi
 }}
-map f :fzf_jump
+map <c-f> :fzf_jump
 
-#, ripgrep
+# --- ripgrep ---
 cmd fzf_search ${{
     RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case "
     res="$(
@@ -79,24 +78,22 @@ cmd fzf_search ${{
     )"
     [ -n "$res" ] && lf -remote "send $id select \"$res\""
 }}
-map gs :fzf_search
+map <c-r> :fzf_search
+
+# --- zoxide ---
+cmd z %{{
+    result="$(zoxide query --exclude $PWD $@ | sed 's/\\/\\\\/g;s/"/\\"/g')"
+    lf -remote "send $id cd \"$result\""
+}}
+map <c-z> :z
+
+cmd zi ${{
+    result="$(zoxide query -i | sed 's/\\/\\\\/g;s/"/\\"/g')"
+    lf -remote "send $id cd \"$result\""
+}}
 
 
-# #; WIKI COMMANDS
-# #, toggle preview
-# cmd toggle_preview %{{
-#     if [ "$lf_preview" = "true" ]; then
-#         lf -remote "send $id :set preview false; set ratios 1:5"
-#     else
-#         lf -remote "send $id :set preview true; set ratios 1:2:3"
-#     fi
-# }}
-
-# map zp toggle_preview
-
-
-
-#! MAPPINGS
+# -------- MAPPINGS --------
 map au unarchive
 map x cut
 map <enter> open
@@ -106,29 +103,14 @@ map C clear
 map gf mkfile
 map gg mkdir
 
-map gd cd ~/documents
-map gw cd ~/dwnloads
-map gp cd ~/pictures
-
-
-
-# map <c-space> ${{
-#     QL_EXE="C:\Users\divyansh\AppData\Local\Programs\QuickLook\QuickLook.exe"
-#     QL_FILE=$(wslpath -w $f)
-#     powershell.exe "$QL_EXE $QL_FILE"
-# }}
-
-map <c-space> ${{
-    QL_FILE=$(wslpath -w $f)
-    powershell.exe start "$QL_FILE"
-}}
-
-
+map gd cd /mnt/data/dev
+map gw cd /mnt/data/dwnloads
+map gs cd /mnt/data/screenshots
+map gn cd /mnt/data/notes
+map gi cd /mnt/data/icons
 
 map <esc> quit
-
 map e $$EDITOR $fx
-
 map i shell
 
 cmd zle-cd %printf 'cd %q && zle reset-prompt\n' "$PWD" >&$ZLE_FIFO

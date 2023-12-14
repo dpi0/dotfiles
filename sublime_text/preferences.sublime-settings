@@ -13,7 +13,7 @@
 	"spell_check": true,
 	"word_wrap": "true",
 	// "color_scheme": "gruvbox (Dark) (Hard).sublime-color-scheme",	
-	"color_scheme": "Packages/Gruvbox Dark/gruvbox.tmTheme",
+	"color_scheme": "Packages/sublime_dark.tmTheme",
 	"font_size": 13,
 	"line_padding_bottom": 4,
 	"line_padding_top": 4,

@@ -2,9 +2,11 @@ plugins=(git zsh-autosuggestions dirhistory history docker you-should-use copypa
 
 export ZSH="$HOME/.oh-my-zsh"
 export DOTFILES="$HOME/.dotfiles"
+export DATA="/mnt/data/"
 
 source $ZSH/oh-my-zsh.sh
 source $DOTFILES/zsh/.zsh_aliases
+export YDOTOOL_SOCKET="$HOME/.ydotool_socket"
 
 export CONFIG="$HOME/.config"
 export PATH="$PATH:/home/dpi0/.local/bin"
@@ -28,7 +30,7 @@ export PIPENV_VENV_IN_PROJECT=0
 
 # --- atuin ---
 export ATUIN_NOBIND="true"
-bindkey '^r' _atuin_search_widget
+bindkey '^t' _atuin_search_widget
 eval "$(atuin init zsh)"
 
 # --- starship ---
@@ -36,6 +38,9 @@ eval "$(starship init zsh)"
 
 # --- zoxide ---
 eval "$(zoxide init zsh --cmd j)"
+
+# --- mcfly ---
+eval "$(mcfly init zsh)"
 
 # --- pyenv ---
 #export PYENV_ROOT="$HOME/.pyenv"

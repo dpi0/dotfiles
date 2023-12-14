@@ -1,7 +1,4 @@
 .ssh
-github_ssh_key
 *.pem
 *.key
 *.pub
-win_dotfiles_backup.sh
-win_dotfiles_setup.sh

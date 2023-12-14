@@ -1,6 +1,6 @@
 [
-		{ "keys": ["alt+e"], "command": "next_view" },
-		{ "keys": ["alt+q"], "command": "prev_view" },
+		{ "keys": ["ctrl+tab"], "command": "next_view" },
+		{ "keys": ["ctrl+shift+tab"], "command": "prev_view" },
 		{ "keys": ["ctrl+t"], "command": "new_file" },
 		{ "keys": ["alt+w"], "command": "new_file" },
 		{ "keys": ["alt+ctrl+m"], "command": "move_to", "args": {"to": "brackets"} },
