@@ -20,7 +20,7 @@ rm -rf $CONFIG/swayidle; ln -s $DOTFILES/swayidle $CONFIG/swayidle
 rm -rf $CONFIG/swaylock; ln -s $DOTFILES/swaylock $CONFIG/swaylock
 rm -rf $CONFIG/tmux; ln -s $DOTFILES/tmux $CONFIG/tmux
 md $DOTFILES/tmux/plugins
-git clone https://github.com/tmux-plugins/tpm $DOTFILES/tmux/
+git clone https://github.com/tmux-plugins/tpm $DOTFILES/tmux/plugins
 rm -rf $CONFIG/waybar; ln -s $DOTFILES/waybar $CONFIG/waybar
 rm -f $HOME/.zshrc; ln -s $DOTFILES/zsh/.zshrc $HOME/.zshrc
 
