@@ -108,7 +108,7 @@
 
     ### Text ###
 
-    font = JetBrainsMono Nerd Font 15
+    font = JetBrainsMono Nerd Font 17
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -279,20 +279,19 @@
     mouse_middle_click = do_action, close_current
     mouse_right_click = close_all
 
+
 [urgency_low]
-	# IMPORTANT: colors have to be defined in quotation marks.
-	# Otherwise the "#" and following would be interpreted as a comment.
-	frame_color = "#00C1E3FF"
-    #00FFEEFF
-	foreground = "#00C1E3FF"
+	frame_color = "#00A5BAFF"
+	foreground = "#00A5BAFF"
 	background = "#191311"
+	#background = "#2B313C"
 	timeout = 4
 
 [urgency_normal]
-	frame_color = "#0BD600FF"
-    #00FF08FF
-	foreground = "#0BD600FF"
+	frame_color = "#49C44BFF"
+	foreground = "#49C44BFF"
 	background = "#191311"
+	#background = "#2B313C"
 	timeout = 6
 
 [urgency_critical]
@@ -300,8 +299,6 @@
 	foreground = "#FF0000FF"
 	background = "#191311"
 	timeout = 8
-	default_icon = "‼️"
-
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
@@ -321,8 +318,3 @@
 # to "".
 # NOTE: It might be helpful to run dunst -print in a terminal in order
 # to find fitting options for rules.
-
-[Spotify]
-    appname=Spotify
-    background = "#013A61"
-    foreground = "#ffffff"

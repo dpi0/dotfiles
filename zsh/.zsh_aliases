@@ -29,10 +29,10 @@ alias tree="eza --tree --long"
 alias re="exec zsh"
 alias tre="tmux source-file $DOTFILES/tmux/tmux.conf"
 alias jj="j -"
-alias h="history | lolcat"
 alias ps="ps | lolcat"
-alias date="date | lolcat"
+alias date="date"
 alias hct="hyprctl"
+alias code="codium"
 
 # --- Python and Poetry Aliases ---
 

@@ -17,5 +17,5 @@
 	"files.autoSave": "onFocusChange",
 	"workbench.productIconTheme": "fluent-icons",
 	"window.menuBarVisibility": "toggle",
-	"window.zoomLevel": 1,
+	"window.zoomLevel": 1
 }

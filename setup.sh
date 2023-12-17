@@ -2,6 +2,7 @@
 
 DOTFILES="$HOME/.dotfiles"
 CONFIG="$HOME/.config"
+DATA="/mnt/data"
 
 rm -rf $CONFIG/alacritty; ln -s $DOTFILES/alacritty $CONFIG/alacritty
 rm -rf $CONFIG/dunst; ln -s $DOTFILES/dunst $CONFIG/dunst
@@ -12,7 +13,7 @@ rm -f /etc/greetd/config.toml; ln -s /home/dpi0/.dotfiles/greetd/config.toml /et
 rm -rf $CONFIG/hypr; ln -s $DOTFILES/hypr $CONFIG/hypr
 rm -rf $CONFIG/lf; ln -s $DOTFILES/lf $CONFIG/lf
 rm -f $CONFIG/libinput-gestures.conf; ln -s $DOTFILES/libinput-gestures/libinput-gestures.conf $CONFIG/libinput-gestures.conf
-rm -f /etc/systemd/logind.conf; ln -s /home/dpi0/.dotfiles/systemd/logind.conf /etc/systemd/logind.conf
+# logind.conf
 rm -rf $CONFIG/nvim; ln -s $DOTFILES/nvim $CONFIG/nvim
 rm -rf $CONFIG/rofi; ln -s $DOTFILES/rofi $CONFIG/rofi
 rm -f $CONFIG/starship.toml; ln -s $DOTFILES/starship/starship.toml $CONFIG/starship.toml
@@ -22,11 +23,32 @@ rm -rf $CONFIG/tmux; ln -s $DOTFILES/tmux $CONFIG/tmux
 md $DOTFILES/tmux/plugins
 git clone https://github.com/tmux-plugins/tpm $DOTFILES/tmux/plugins
 rm -rf $CONFIG/waybar; ln -s $DOTFILES/waybar $CONFIG/waybar
+ln -s $DOTFILES/wlogout $CONFIG/wlogout
+ln -s $DOTFILES/swappy $CONFIG/swappy
 rm -f $HOME/.zshrc; ln -s $DOTFILES/zsh/.zshrc $HOME/.zshrc
 
-rm -f $CONFIG/sublime-text/Packages/sublime_dark.tmTheme; ln -s $DOTFILES/sublime_text/themes/sublime_dark.tmTheme $CONFIG/sublime-text/Packages/sublime_dark.tmTheme
-rm -f $CONFIG/sublime-text/Packages/User/Preferences.sublime-settings; ln -s $DOTFILES/sublime_text/preferences.sublime-settings $CONFIG/sublime-text/Packages/User/Preferences.sublime-settings
-rm -f "$CONFIG/sublime-text/Packages/User/Default (Linux).sublime-keymap"; ln -s $DOTFILES/sublime_text/keybindings.sublime-keymap "$CONFIG/sublime-text/Packages/User/Default (Linux).sublime-keymap"
-rm -f $CONFIG/sublime-text/Packages/User/Adaptive.sublime-theme; ln -s $DOTFILES/sublime_text/adaptive.sublime-theme $CONFIG/sublime-text/Packages/User/Adaptive.sublime-theme
+
+ln -s ~/.dotfiles/dunst/scripts/brightness-notify.sh  ~/.local/bin/brightnotify
+ln -s ~/.dotfiles/dunst/scripts/volume-notify.sh  ~/.local/bin/volnotify
+ln -s ~/.dotfiles/dunst/scripts/battery-notify.sh  ~/.local/bin/batnotify
+ln -s ~/.dotfiles/dunst/scripts/time-notify.sh  ~/.local/bin/timenotify
+ln -s ~/.dotfiles/dunst/scripts/nightlight-notify.sh  ~/.local/bin/nightnotify
+ln -s ~/.dotfiles/dunst/scripts/mic-notify.sh  ~/.local/bin/micnotify
 
 # ln -sf $DOTFILES/.ssh $HOME/.ssh
+
+# Function to ask the user for permission
+function ask_user() {
+    read -p "Do you want to install this package? (yes/no): " response
+    if [ "$response" != "yes" ]; then
+        echo "Skipping installation for this section."
+        return 1
+    fi
+    return 0
+}
+
+# ask
+echo "Installing paru..."
+if ask_user; then
+	git clone https://github.com/dpi0/scripts
+fi

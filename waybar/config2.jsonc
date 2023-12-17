@@ -1,156 +1,155 @@
 {
-    "position": "left",
-    "layer": "bottom",
-    "height": 38,
-    "spacing": 5,
-    "modules-left": [
-        "hyprland/workspaces"
-    ],
-    
-    "modules-center": [
-        
-    ],
-    
-    "modules-right": [
-        // "disk",
-        "memory",
-        "cpu",
-        // "bluetooth",
-        "pulseaudio#microphone",
-        "network",
-        "pulseaudio",
-        "backlight",
-        "battery",
-        "clock",
-    ],
-    
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "on-click": "activate"
-    },
-    
-    "tray": {
-        "icon-size": 12,
-        "spacing": 10
-    },
-        
-    "clock": {
-        "format": "{: %H:%M}",
-        "tooltip-format": "<big>{:%a %b %e}</big>\n<tt><big>{calendar}</big></tt>"
-    },
-    
-
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 20
-        },
-        "interval": 10,
-        "format": "{power:0.2f}W {icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-    },
-
-
-    "disk": {
-        "interval": 300,
-        "format": "󰋊 {free}",
-        "path": "/"
-    },
-
-    "memory": {
-        "interval": 30,
-        // "format": "᯽ {used:0.1f}/{total:0.1f}G"
-        "format": "᯽ {used:0.1f}G {percentage}%"
-    },
-    //     "cpu": {
-    //     "interval": 10,
-    //     "format": "󰍛",
-    //     "format-alt-click": "click-right",
-    //     "on-click": "~/.config/waybar/custom/stats.sh cpu",
-    //     "states": {
-    //         "low": 0,
-    //         "mid": 25,
-    //         "high": 50
-    //     }
-    // },
-    "cpu": {
-        "interval": 10,
-        "format": "󰍛 {usage}%",
-        "max-length": 10
-    },
-
-    "bluetooth": {
-    "format": " {status}",
-    "format-connected": " {device_alias}",
-    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
-    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
-},
-    
-
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "  {signalStrength}%",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{essid} - {ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}",
-    },
-
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "tooltip": false,
-        "format-muted": " Muted",
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
-        "scroll-step": 5,
-        "format-icons": {
-            "headphone": "",
-            "default": ["", "", ""]
-        }
-    },
-
-
-    "pulseaudio#microphone": {
-        "format": "{format_source}",
-        "format-source": "🎙 {volume}%",
-        "format-source-muted": "🎙 Muted",
-        "on-click": "pamixer --default-source -t",
-        "on-scroll-up": "pamixer --default-source -i 5",
-        "on-scroll-down": "pamixer --default-source -d 5",
-        "scroll-step": 5
-    },
-
-
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon} {percent}%",
-        "format-icons": ["󰃞", "󰃟", "󰃠"],
-        "on-scroll-up": "brightnessctl set 1%+",
-        "on-scroll-down": "brightnessctl set 1%-",
-        "min-length": 6
-    },
-
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }
+	"position": "left",
+	"layer": "bottom",
+	"height": 38,
+	"spacing": 5,
+	"modules-left": [
+		"hyprland/workspaces"
+	],
+	"modules-center": [],
+	"modules-right": [
+		// "disk",
+		"memory",
+		"cpu",
+		// "bluetooth",
+		"pulseaudio#microphone",
+		"network",
+		"pulseaudio",
+		"backlight",
+		"battery",
+		"clock",
+	],
+	"hyprland/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"on-click": "activate"
+	},
+	"tray": {
+		"icon-size": 12,
+		"spacing": 10
+	},
+	"clock": {
+		"format": "{: %H:%M}",
+		"tooltip-format": "<big>{:%a %b %e}</big>\n<tt><big>{calendar}</big></tt>"
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 20
+		},
+		"interval": 10,
+		"format": "{power:0.2f}W {icon} {capacity}%",
+		"format-charging": " {capacity}%",
+		"format-plugged": " {capacity}%",
+		"format-alt": "{time} {icon}",
+		"format-icons": [
+			"󰂎",
+			"󰁺",
+			"󰁻",
+			"󰁼",
+			"󰁽",
+			"󰁾",
+			"󰁿",
+			"󰂀",
+			"󰂁",
+			"󰂂",
+			"󰁹"
+		]
+	},
+	"disk": {
+		"interval": 300,
+		"format": "󰋊 {free}",
+		"path": "/"
+	},
+	"memory": {
+		"interval": 30,
+		// "format": "᯽ {used:0.1f}/{total:0.1f}G"
+		"format": "᯽ {used:0.1f}G {percentage}%"
+	},
+	//     "cpu": {
+	//     "interval": 10,
+	//     "format": "󰍛",
+	//     "format-alt-click": "click-right",
+	//     "on-click": "~/.config/waybar/custom/stats.sh cpu",
+	//     "states": {
+	//         "low": 0,
+	//         "mid": 25,
+	//         "high": 50
+	//     }
+	// },
+	"cpu": {
+		"interval": 10,
+		"format": "󰍛 {usage}%",
+		"max-length": 10
+	},
+	"bluetooth": {
+		"format": " {status}",
+		"format-connected": " {device_alias}",
+		"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+	},
+	"network": {
+		// "interface": "wlp2*", // (Optional) To force the use of this interface
+		"format-wifi": "  {signalStrength}%",
+		"format-ethernet": "{ipaddr}/{cidr} ",
+		"tooltip-format": "{essid} - {ifname} via {gwaddr} ",
+		"format-linked": "{ifname} (No IP) ",
+		"format-disconnected": "Disconnected ⚠",
+		"format-alt": "{ifname}:{essid} {ipaddr}/{cidr}",
+	},
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+		"tooltip": false,
+		"format-muted": " Muted",
+		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+		"on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+		"scroll-step": 5,
+		"format-icons": {
+			"headphone": "",
+			"default": [
+				"",
+				"",
+				""
+			]
+		}
+	},
+	"pulseaudio#microphone": {
+		"format": "{format_source}",
+		"format-source": "🎙 {volume}%",
+		"format-source-muted": "🎙 Muted",
+		"on-click": "pamixer --default-source -t",
+		"on-scroll-up": "pamixer --default-source -i 5",
+		"on-scroll-down": "pamixer --default-source -d 5",
+		"scroll-step": 5
+	},
+	"backlight": {
+		"device": "intel_backlight",
+		"format": "{icon} {percent}%",
+		"format-icons": [
+			"󰃞",
+			"󰃟",
+			"󰃠"
+		],
+		"on-scroll-up": "brightnessctl set 1%+",
+		"on-scroll-down": "brightnessctl set 1%-",
+		"min-length": 6
+	},
+	"custom/media": {
+		"format": "{icon} {}",
+		"return-type": "json",
+		"max-length": 40,
+		"format-icons": {
+			"spotify": "",
+			"default": "🎜"
+		},
+		"escape": true,
+		"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+		// "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+	}
 }
 // vim: ft=jsonc

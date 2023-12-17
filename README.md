@@ -26,7 +26,7 @@
 |  **Shell**                     | [Zsh](https://github.com/zsh-users)                        |
 |  **Zsh Theme**                 | [Powerlevel10k](https://github.com/romkatv/powerlevel10k)  |
 |  **Fonts**                     | [JetBrainsMono Nerd Font](https://www.nerdfonts.com/)    |
-|  **Wallpaper Loader**          | [Hyprpaper](https://github.com/Horus645/swww)                   |
-|  **Color Picker**          	 | [Hyprpicker](https://github.com/Horus645/swww)                   |
+|  **Wallpaper Loader**          | [Hyprpaper](https://github.com/hyprwm/hyprpaper)                   |
+|  **Color Picker**          	 | [Hyprpicker](https://github.com/hyprwm/hyprpicker)                   |
 |  **Screenshot**          	     | [Swappy](https://github.com/jtheoof/swappy)         |
 |  **Wallpapers**                | [dpi0/wallpapers](https://github.com/dpi0/wallpapers)  |

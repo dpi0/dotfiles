@@ -1,0 +1,10 @@
+[Default]
+save_dir=/mnt/data/screenshots
+save_filename_format=bruh-%H:%M:%S-%d-%b.jpg
+show_panel=true
+line_size=5
+text_size=30
+text_font=sans-serif
+paint_mode=brush
+early_exit=false
+fill_shape=false
