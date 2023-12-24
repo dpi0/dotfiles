@@ -1,4 +1,10 @@
-plugins=(git zsh-autosuggestions dirhistory history docker you-should-use copypath copyfile)
+plugins=(git zsh-autosuggestions dirhistory history docker you-should-use copypath copyfile copybuffer)
+
+# copybuffer: use ctrl+o to copy the current current you are about to enter to clipboard
+# copyfile: copies the content of a file to clipboard, copyfile <file-name>
+# copypath: same as above
+
+setopt EXTENDED_HISTORY
 
 export ZSH="$HOME/.oh-my-zsh"
 export DOTFILES="$HOME/.dotfiles"
@@ -28,6 +34,9 @@ export PATH=$PATH:/home/dpi0/go/pkg/mod
 # --- pipenv ---
 export PIPENV_VENV_IN_PROJECT=0
 
+# --- fzf ---
+export FZF_DEFAULT_OPTS='--height 50% --layout=reverse'
+
 # --- atuin ---
 export ATUIN_NOBIND="true"
 bindkey '^t' _atuin_search_widget
@@ -40,7 +49,7 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh --cmd j)"
 
 # --- mcfly ---
-eval "$(mcfly init zsh)"
+#eval "$(mcfly init zsh)"
 
 # --- pyenv ---
 #export PYENV_ROOT="$HOME/.pyenv"
@@ -48,7 +57,7 @@ eval "$(mcfly init zsh)"
 #eval "$(pyenv init -)"
 
 # --- zsh config ---
-HIST_STAMPS="%d/%m/%Y — %H:%M"
+HIST_STAMPS="%d/%m/%Y %H:%M"
 
 #ENABLE_CORRECTION="true"
 #COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"

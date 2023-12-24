@@ -1,4 +1,5 @@
 source $DOTFILES/zsh/.zsh_functions
+source $DOTFILES/zsh/.zsh_fsystemctl
 
 # --- Terminal Aliases ---
 
@@ -26,18 +27,21 @@ alias cat="bat"
 alias xx="exit"
 alias ping="gping"
 alias tree="eza --tree --long"
-alias re="exec zsh"
+alias re="source ~/.zshrc"
+alias h="re; history"
 alias tre="tmux source-file $DOTFILES/tmux/tmux.conf"
 alias jj="j -"
-alias ps="ps | lolcat"
+alias ps="ps"
 alias date="date"
 alias hct="hyprctl"
 alias code="codium"
+alias feh="feh -F"
+alias fs="fuzzy-sys"
 
 # --- Python and Poetry Aliases ---
 
 alias py="python3"
-alias ppf="pip freeze | lolcat"
+alias ppf="pip freeze"
 alias install="poetry add"
 alias remove="poetry remove"
 alias update="poetry update"
@@ -99,7 +103,7 @@ alias disableServ="sudo systemctl disable"
 
 # --- File Operations Aliases ---
 
-alias rem="rm -rfi"
+#alias rem="rm -rfi"
 alias del="trash-put"
 alias dlist="trash-list"
 alias drm="trash-rm"
@@ -120,31 +124,19 @@ alias open="nautilus ."
 alias vim=nvim
 alias vi=vim
 alias v=nvim
-
+ 
 # --- Config Management Alias ---
 
 alias cz=chezmoi
 
 # --- Custom Directories Aliases ---
 
-alias winback="cd /mnt/c/Users/divyansh/Documents/Backup\ Settings\ \&\ Files"
-alias cdw="cd /mnt/data/dwnloads"
-alias cdn="cd /mnt/data/notes"
-alias cdi="cd /mnt/data/icons"
-alias cds="cd /mnt/data/screenshots"
-alias cdd="cd /mnt/data/dev"
-alias cdww="cd /mnt/s/dwnloads"
-#alias subl="ss"
+alias cdw="cd /mnt/datadrive/dwnloads"
+alias cdn="cd /data/notes"
+alias cds="cd /data/screenshots"
+alias cdr="cd /data/scripts"
+alias cdd="cd /data/dev"
 
-
-
-# alias cddd="cd /mnt/s/dev"
-
-# alias subl="/mnt/c/Users/divyansh/scoop/apps/sublime-text/current/subl.exe"
-
-# alias dw="rsync -va --delete /mnt/c/Users/divyansh/Downloads/ $HOME/dwnloads"
-
-# alias back="$HOME/wsl_backup.sh"
 
 alias mk="minikube"
 alias kb="kubectl"
@@ -201,3 +193,4 @@ alias patr='pactree -r' # What depends on pkg?
 alias pas='pacman -Ss' # Search for a package or packages in the repositories.
 alias pasi='pacman -Si' # Display information about a given package located in the repositories.
 alias pasc='pacman -Qs' # Search for a package or packages in the local database.
+alias lz=lazygit
