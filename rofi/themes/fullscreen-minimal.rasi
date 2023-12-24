@@ -2,11 +2,11 @@
 
 * {
     font: "JetBrainsMono Nerd Font 23";
-    background: #000000DD;
+    background: #181818EE;
     box-background: #00000000;
-    accent-color: #00ff00;
+    accent-color: #8EC07C;
     test-blue: #0000ff;
-    foreground: #ffffff;
+    foreground: #ebdbb2;
     background-color: transparent;
     text-color: @foreground;
 }
@@ -51,7 +51,4 @@ entry {
 }
 listview {
     spacing: 10px;
-}
-entry{
-    text-color: @accent-color;
 }
