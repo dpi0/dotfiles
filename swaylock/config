@@ -1,15 +1,14 @@
-image=/mnt/data/wallpapers/black-stars.png
+image=/mnt/datadrive/wallpapers/black-stars.png
 
 ignore-empty-password
 
-font=JetBrainsMono Nerd Font
-font-size=35
-indicator-radius=140
-indicator-thickness=14
+font-size=1
+indicator-radius=200
+indicator-thickness=20
 
-key-hl-color=00FF08
-separator-color=00FF08
-bs-hl-color=FF0000
+key-hl-color=689D6A
+separator-color=000000
+bs-hl-color=CC241D
 
 inside-color=000000
 line-color=000000
@@ -17,16 +16,16 @@ ring-color=000000
 text-color=000000
 
 inside-wrong-color=000000
-line-wrong-color=FF0000
-ring-wrong-color=FF0000
-text-wrong-color=FF0000
+line-wrong-color=CC241D
+ring-wrong-color=CC241D
+text-wrong-color=CC241D
 
 inside-ver-color=000000
-line-ver-color=00FF08
-ring-ver-color=00FF08
-text-ver-color=00FF08
+line-ver-color=689D6A
+ring-ver-color=689D6A
+text-ver-color=689D6A
 
 inside-clear-color=000000
-line-clear-color=0091FF
-ring-clear-color=0091FF
-text-clear-color=0091FF
+line-clear-color=458588
+ring-clear-color=458588
+text-clear-color=458588

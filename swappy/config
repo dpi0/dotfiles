@@ -1,6 +1,6 @@
 [Default]
-save_dir=/mnt/data/screenshots
-save_filename_format=bruh-%H:%M:%S-%d-%b.jpg
+save_dir=/data/screenshots
+save_filename_format=S-%H:%M:%S-%d-%b.jpg
 show_panel=true
 line_size=5
 text_size=30
