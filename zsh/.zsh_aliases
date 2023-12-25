@@ -131,7 +131,8 @@ alias cz=chezmoi
 
 # --- Custom Directories Aliases ---
 
-alias cdw="cd /mnt/datadrive/dwnloads"
+alias cdw="cd /mnt/shared/dwnloads"
+alias cdww="cd /mnt/shared/wallpapers/"
 alias cdn="cd /data/notes"
 alias cds="cd /data/screenshots"
 alias cdr="cd /data/scripts"

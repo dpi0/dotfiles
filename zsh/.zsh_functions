@@ -127,7 +127,7 @@ fkill() {
 }
 
 # paru search all installed packages
-pf() {
+fp() {
 cat /var/log/pacman.log | grep -E "\[ALPM\] (installed|removed|upgraded|upgraded|downgraded)" | awk '{print $1, $2, $3, $4, $5, $6}' | sort -r | fzf
 }
 pfc() {
