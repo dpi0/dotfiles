@@ -18,9 +18,9 @@
 		"hyprland/window"
 	],
 	"modules-right": [
-		// "privacy",
 		// "keyboard-state",
 		// "idle_inhibitor",
+		// "privacy",
 		// "hyprland/window",
 		"memory",
 		"cpu",
@@ -104,17 +104,17 @@
 	"custom/music": {
 		"format": "{icon} {}",
 		"return-type": "json",
-		"max-length": 100,
+		"max-length": 40,
 		"format-icons": {
 			"spotify": " ",
 			"default": " "
 		},
 		"escape": true,
 		"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null",
-		"on-click": "playerctl --player=spotify play-pause",
-		"on-click-right": "playerctl --player=spotify next",
-		"on-scroll-up": "playerctl --player=spotify next",
-		"on-scroll-down": "playerctl --player=spotify previous"
+		"on-click": "playerctl play-pause",
+		"on-click-right": "playerctl next",
+		"on-scroll-up": "playerctl next",
+		"on-scroll-down": "playerctl previous"
 	},
 	"wlr/taskbar": {
 		"format": "{icon}",
@@ -128,20 +128,20 @@
 		],
 		"on-click-middle": "close"
 	},
-		// "custom/weather": {
-	// 	"format": "{}",
-	// 	"tooltip": true,
-	// 	"interval": 3600,
-	// 	"exec": "$HOME/.config/waybar/wttr.py 2> /dev/null",
-	// 	"return-type": "json"
-	// },
-	"custom/weather": {
-		"exec": "/data/scripts/bash/wttr.sh",
-		"return-type": "json",
+		"custom/weather": {
 		"format": "{}",
 		"tooltip": true,
-		"interval": 3600
+		"interval": 3600,
+		"exec": "$HOME/.config/waybar/wttr.py 2> /dev/null",
+		"return-type": "json"
 	},
+	// "custom/weather": {
+	// 	"exec": "/data/scripts/bash/wttr.sh",
+	// 	"return-type": "json",
+	// 	"format": "{}",
+	// 	"tooltip": true,
+	// 	"interval": 3600
+	// },
 	"keyboard-state": {
 		"numlock": true,
 		"capslock": true,
@@ -160,7 +160,7 @@
 	},
 	"privacy": {
 		"icon-spacing": 4,
-		"icon-size": 18,
+		"icon-size": 20,
 		"transition-duration": 250,
 		"modules": [
 			{

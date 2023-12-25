@@ -14,19 +14,19 @@
     "label" : "logout",
     "action" : "loginctl terminate-user $USER",
     "text" : "Logout",
-    "keybind" : "e"
+    "keybind" : "o"
 }
 {
     "label" : "shutdown",
     "action" : "systemctl poweroff",
     "text" : "Shutdown",
-    "keybind" : "s"
+    "keybind" : "u"
 }
 {
     "label" : "suspend",
     "action" : "systemctl suspend",
     "text" : "Suspend",
-    "keybind" : "u"
+    "keybind" : "s"
 }
 {
     "label" : "reboot",
