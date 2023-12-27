@@ -1,6 +1,8 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/dpi0/.dotfiles
+- /data/dev/hugo/echo
+- /data/dev/hugo/echo/themes/etch
 - /data/scripts
 - /data/dev/github/practice-lazygit
 startuppopupversion: 5

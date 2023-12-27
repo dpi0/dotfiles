@@ -359,10 +359,22 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 
 
-vim.keymap.set('n', '<C-s>', ':w<CR>', { desc = 'Save File' })
+vim.keymap.set('n', '<C-s>', [[:w<CR>]], { noremap = true, silent = true })
+vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-S-s>', ':wq<CR>', { desc = 'Save and Close File' })
 vim.keymap.set('n', '<M-Down>', ':m .+1<CR>==', { desc = 'Move line down' })
 vim.keymap.set('n', '<M-Up>', ':m .-2<CR>==', { desc = 'Move line up' })
+
+-- Define a function to prompt for a filename and save the file
+function save_file_with_prompt()
+    local filename = vim.fn.input('Enter filename: ')
+    if filename ~= '' then
+        vim.cmd('w ' .. filename)
+    end
+end
+
+-- Map the key combination to the function
+vim.keymap.set('n', '<C-M-s>', [[:lua save_file_with_prompt()<CR>]], { noremap = true, silent = true })
 
 vim.keymap.set('n', '<C-q>', ':qa<CR>', { desc = 'Quit All' })
 vim.keymap.set('n', '<S-Tab>', ':bp<CR>', { desc = 'Previous Buffer' })
