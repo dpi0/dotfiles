@@ -1,0 +1,53 @@
+layout {
+    pane size=1 borderless=true {
+        plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+            format_left  "#[fg=#8EC07C,bold]{session} {mode} {tabs}"
+            format_right "{datetime}"
+            format_space ""
+
+            border_enabled  "false"
+            border_char     "─"
+            border_format   "#[fg=#689D6A]{char}"
+            border_position "top"
+
+            mode_normal        "#[fg=#8EC07C,bold] {name} "
+            mode_locked        "#[fg=#FABD2F,bold] {name} "
+            mode_resize        "#[fg=#FABD2F,bold] {name} "
+            mode_pane          "#[fg=#FABD2F,bold] {name} "
+            mode_tab           "#[fg=#FABD2F,bold] {name} "
+            mode_scroll        "#[fg=#FABD2F,bold] {name} "
+            mode_enter_search  "#[fg=#FABD2F,bold] {name} "
+            mode_search        "#[fg=#FABD2F,bold] {name} "
+            mode_rename_tab    "#[fg=#FABD2F,bold] {name} "
+            mode_rename_pane   "#[fg=#FABD2F,bold] {name} "
+            mode_session       "#[fg=#FABD2F,bold] {name} "
+            mode_move          "#[fg=#FABD2F,bold] {name} "
+            mode_prompt        "#[fg=#FABD2F,bold] {name} "
+            mode_tmux          "#[fg=#FABD2F,bold] {name} "
+
+            tab_normal   "#[fg=#689D6A] {name} "
+            tab_active   "#[fg=#8EC07C,bold,italic] {name} "
+
+			command_bruh_command 	"ip addr | grep -e 'state UP' -A 2 | awk '/inet /{printf $2}'"
+			command_bruh_format      "#[fg=#8EC07C]"
+            command_bruh_interval    "10"
+            command_bruh_rendermode  "static"
+
+            command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
+            command_git_branch_format      "#[fg=#8EC07C] {stdout} "
+            command_git_branch_interval    "10"
+            command_git_branch_rendermode  "static"
+
+            datetime        "#[fg=#689D6A,bold]  {format} "
+            //datetime_format "%A, %d %b %Y %H:%M"
+            datetime_format "%H:%M"
+            datetime_timezone "Europe/Berlin"
+        }
+    }
+
+	pane split_direction="vertical" {
+        pane
+        pane
+    }
+
+}
