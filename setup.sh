@@ -25,6 +25,8 @@ config_files=(
     swappy
     spotifyd
     lazygit
+    btop
+    broot
 )
 
 for file in "${config_files[@]}"; do
@@ -39,7 +41,6 @@ rm -f $HOME/.gitattributes; ln -s $DOTFILES/git/.gitattributes $HOME/.gitattribu
 md $HOME/.local/bin
 ln -s /data/scripts/bash/timer.sh $HOME/.local/bin/timer
 ln -s /data/scripts/bash/doo.sh $HOME/.local/bin/doo
-# ln -s /data/scripts/bash/dunst/* $HOME/.local/bin/
 
 # rm -f $CONFIG/libinput-gestures.conf; ln -s $DOTFILES/libinput-gestures/libinput-gestures.conf $CONFIG/libinput-gestures.conf
 # greetd config.toml

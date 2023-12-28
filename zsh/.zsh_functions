@@ -139,4 +139,13 @@ in() {
     paru -Slq | fzf -q "$1" -m --preview 'paru -Si {1}' | xargs -ro paru -S
 }
 
-# do command to add reminders
+
+fzf_systemctl_user_status() {
+  local selected_service
+
+  selected_service=$(systemctl --user list-units --type=service --no-pager --all | awk '{print $1}' | fzf --height=40% --preview="systemctl --user status {}")
+
+  if [ -n "$selected_service" ]; then
+    systemctl --user status "$selected_service"
+  fi
+}

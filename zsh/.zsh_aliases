@@ -3,14 +3,23 @@ source $DOTFILES/zsh/.zsh_fsystemctl
 
 # --- Terminal Aliases ---
 
-alias apt="sudo apt"
-alias n="sudo nala"
-alias t="tmux"
-alias ta="t a -t"
-alias tls="t ls"
-alias tn="t new-session -s"
-alias tk="t kill-session -t"
-alias tr="t rename-session -t"
+#alias apt="sudo apt"
+#alias n="sudo nala"
+#alias t="tmux"
+#alias ta="t a -t"
+#alias tls="t ls"
+#alias tn="t new-session -s"
+#alias tk="t kill-session -t"
+#alias tr="t rename-session -t"
+
+alias t="zellij"
+alias tl="zellij list-sessions"
+alias ta="zellij attach"
+alias td="zellij delete-session"
+alias tda="zellij delete-all-sessions"
+alias tk="zellij kill-session"
+alias tka="zellij kill-all-sessions"
+
 
 # --- File Management Aliases ---
 
@@ -18,6 +27,8 @@ alias lx="eza --icons -a"
 alias l="eza --icons -a -l"
 alias ls="eza --icons -a -l"
 alias lt="eza --icons -a -T"
+alias br="broot -s"
+
 
 # --- System Aliases ---
 
@@ -37,6 +48,7 @@ alias hct="hyprctl"
 alias code="codium"
 alias feh="feh -F"
 alias fs="fuzzy-sys"
+alias fsu="fzf_systemctl_user_status"
 
 # --- Python and Poetry Aliases ---
 
