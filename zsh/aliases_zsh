@@ -1,5 +1,5 @@
-source $DOTFILES/zsh/.zsh_functions
-source $DOTFILES/zsh/.zsh_fsystemctl
+source $DOTFILES/zsh/functions_zsh
+source $DOTFILES/zsh/fsystemctl_zsh
 
 # --- Terminal Aliases ---
 
@@ -25,7 +25,8 @@ alias tka="zellij kill-all-sessions"
 
 alias lx="eza --icons -a"
 alias l="eza --icons -a -l"
-alias ls="eza --icons -a -l"
+alias lg="l -g"
+alias ls="l"
 alias lt="eza --icons -a -T"
 alias br="broot -s"
 
@@ -45,10 +46,17 @@ alias jj="j -"
 alias ps="ps"
 alias date="date"
 alias hct="hyprctl"
-alias code="codium"
-alias feh="feh -F"
+alias code="code"
+alias i="feh -Fd"
+alias feh="feh -Fd"
+alias cheat="cht.sh"
 alias fs="fuzzy-sys"
 alias fsu="fzf_systemctl_user_status"
+alias ufw="sudo ufw"
+alias ufws="sudo ufw status numbered"
+alias dw="aria2c"
+alias curl="curlie"
+alias pdf="zathura"
 
 # --- Python and Poetry Aliases ---
 
@@ -101,17 +109,17 @@ alias dpush="d push"
 alias dsrch="d search"
 alias dpull="d pull"
 
-# --- Service Management Aliases ---
+# --- ice Management Aliases ---
 
-alias statusServ="sudo systemctl status"
-alias listServ="sudo systemctl list-unit-files"
-alias startServ="sudo systemctl start"
-alias stopServ="sudo systemctl stop"
-alias blockServ="sudo systemctl mask"
-alias unblockServ="sudo systemctl unmask"
-alias restartServ="sudo systemctl reload-or-restart"
-alias enableServ="sudo systemctl enable"
-alias disableServ="sudo systemctl disable"
+alias status="sudo systemctl status"
+alias list="sudo systemctl list-unit-files"
+alias start="sudo systemctl start"
+alias stop="sudo systemctl stop"
+alias block="sudo systemctl mask"
+alias unblock="sudo systemctl unmask"
+alias restart="sudo systemctl reload-or-restart"
+alias enable="sudo systemctl enable"
+alias disable="sudo systemctl disable"
 
 # --- File Operations Aliases ---
 
@@ -143,10 +151,12 @@ alias cz=chezmoi
 
 # --- Custom Directories Aliases ---
 
-alias cdw="cd /mnt/shared/dwnloads"
-alias cdww="cd /mnt/shared/wallpapers/"
-alias cdn="cd /data/notes"
-alias cds="cd /mnt/shared/screenshots"
+alias cdw="cd /shared/dwnloads"
+alias cdww="cd /shared/wallpapers/"
+alias cdn="cd /shared/notes"
+alias cdb="cd /shared/books"
+alias cdni="cd /shared/notes_img"
+alias cds="cd /shared/screenshots"
 alias cdr="cd /data/scripts"
 alias cdd="cd /data/dev"
 

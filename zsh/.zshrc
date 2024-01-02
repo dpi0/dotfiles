@@ -11,16 +11,30 @@ export DOTFILES="$HOME/.dotfiles"
 export DATA="/mnt/data/"
 
 source $ZSH/oh-my-zsh.sh
-source $DOTFILES/zsh/.zsh_aliases
+source $DOTFILES/zsh/aliases_zsh
 export YDOTOOL_SOCKET="$HOME/.ydotool_socket"
 
 export CONFIG="$HOME/.config"
 export PATH="$PATH:/home/dpi0/.local/bin"
-# export EDITOR="subl"
+export EDITOR="/usr/bin/nvim"
 # export PATH=$(pwd)/bin:$PATH
 
 # --- fzf ---
 export FZF_DEFAULT_COMMAND="fd --type f"
+export FZF_DEFAULT_OPTS='--height 50% --layout=reverse'
+export FZF_CTRL_T_OPTS="
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+
+# CTRL-/ to toggle small preview window to see the full command
+# CTRL-Y to copy the command into clipboard using pbcopy
+export FZF_CTRL_R_OPTS="
+  --preview 'echo {}' --preview-window up:3:hidden:wrap
+  --bind 'ctrl-/:toggle-preview'
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard'"
+
 
 # --- vim & nvim ---
 export EDITOR="vim"
@@ -33,14 +47,6 @@ export PATH=$PATH:/home/dpi0/go/pkg/mod
 
 # --- pipenv ---
 export PIPENV_VENV_IN_PROJECT=0
-
-# --- fzf ---
-export FZF_DEFAULT_OPTS='--height 50% --layout=reverse'
-
-# --- atuin ---
-export ATUIN_NOBIND="true"
-bindkey '^t' _atuin_search_widget
-eval "$(atuin init zsh)"
 
 # --- starship ---
 eval "$(starship init zsh)"

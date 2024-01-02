@@ -1,5 +1,5 @@
 timestamp=$(date +'%H-%M-%S_%d-%b')
-filename="/mnt/shared/screenshots/R_$timestamp.mp4"
+filename="/shared/screenshots/R_$timestamp.mp4"
 
 region=$(slurp)
 

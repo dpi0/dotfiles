@@ -33,21 +33,14 @@ layout {
             command_bruh_interval    "10"
             command_bruh_rendermode  "static"
 
-            command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
-            command_git_branch_format      "#[fg=#8EC07C] {stdout} "
-            command_git_branch_interval    "10"
-            command_git_branch_rendermode  "static"
-
-            datetime        "#[fg=#689D6A,bold]  {format} "
-            //datetime_format "%A, %d %b %Y %H:%M"
-            datetime_format "%H:%M"
-            datetime_timezone "Europe/Berlin"
+            command_git_branch_command     "git rev-parse --abbrev%H:%M"
+            datetime_timezone "Asia/Kolkata"
         }
     }
 
 	pane split_direction="vertical" {
-        pane
-        pane
+        pane borderless=true
+        pane borderless=true
     }
 
 }

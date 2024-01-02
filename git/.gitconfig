@@ -4,6 +4,7 @@
 
 [core]
 	pager = delta
+	editor = nvim
 
 [interactive]
 	diffFilter = delta --color-only
@@ -30,3 +31,10 @@
 	directory = /mnt/shared/dev/zola/echo
 	directory = /mnt/data/scripts
 	directory = /mnt/datadrive/wallpapers
+	directory = /mnt/shared/notes
+	directory = /mnt/shared/notes/obsidian_vaults/notes
+	directory = /mnt/shared/notes/obsidian_vaults/no
+	directory = /mnt/shared/notes/obsidian_vaults/notes2
+	directory = /shared/notes
+[init]
+	defaultBranch = main

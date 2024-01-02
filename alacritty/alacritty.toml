@@ -1,0 +1,67 @@
+import = ["/home/dpi0/.config/alacritty/themes/gruvbox_dark.toml"]
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[cursor.style]
+blinking = "Always"
+shape = "Beam"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 13
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "C"
+mods = "Alt"
+
+[scrolling]
+history = 100000
+multiplier = 3
+
+[shell]
+program = "/usr/bin/zsh"
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+vi_mode_style = "Block" 
+
+[window]
+decorations = "none"
+dynamic_padding = false
+startup_mode = "Windowed"
+
+[window.padding]
+x = 5
+y = 0

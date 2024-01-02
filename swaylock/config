@@ -1,10 +1,10 @@
-image=/mnt/shared/wallpapers/black-stars.png
+image=/shared/wallpapers/fireworks4.jpg
 
 ignore-empty-password
 
 font-size=1
-indicator-radius=200
-indicator-thickness=20
+indicator-radius=1
+indicator-thickness=1
 
 key-hl-color=689D6A
 separator-color=000000

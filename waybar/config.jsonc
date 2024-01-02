@@ -29,7 +29,7 @@
 		"backlight",
 		"battery",
 		"custom/weather",
-		"user",
+		//"user",
 		"clock",
 		"custom/power"
 	],
@@ -110,6 +110,7 @@
 			"default": " "
 		},
 		"escape": true,
+		"scroll-step": 0,
 		"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null",
 		"on-click": "playerctl play-pause",
 		"on-click-right": "playerctl next",
@@ -208,7 +209,7 @@
 		"max-length": 20
 	},
 	"network": {
-		"format-wifi": " {signalStrength}%",
+		"format-wifi": "  {signalStrength}%",
 		"format-ethernet": "{ipaddr}/{cidr} 󰊗",
 		"format-disconnected": "Disconnected 💀",
 		"tooltip-format": "{ifname} via {gwaddr} 󰊗",
@@ -216,6 +217,7 @@
 		"tooltip-format-ethernet": "{ifname} ",
 		"tooltip-format-disconnected": "Disconnected",
 		"format-alt": "  {essid} ({signalStrength}%) {ipaddr}/{cidr} {signaldBm}dBm ",
+		"on-click": "nm-connection-editor",
 		"on-click-right": "nmcli networking on",
 		"on-click-middle": "nmcli networking off",
 		"max-length": 50,
