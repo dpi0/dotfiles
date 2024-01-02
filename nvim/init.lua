@@ -348,10 +348,10 @@ end
 vim.keymap.set('n', '<leader>s/', telescope_live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
 vim.keymap.set('n', '<leader>ss', require('telescope.builtin').builtin, { desc = '[S]earch [S]elect Telescope' })
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
-vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+vim.api.nvim_set_keymap('n', '<leader>sf', [[<cmd>lua require('telescope.builtin').find_files({ hidden = true })<CR>]], { noremap = true, silent = true, desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
-vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
+vim.api.nvim_set_keymap('n', '<leader>sg', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], { noremap = true, silent = true, desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
 vim.keymap.set('n', '<leader>e', ':Neotree toggle<cr>', { desc = '[S]earch by [G]rep on Git Root' })
 vim.keymap.set('n', '<leader>c', ':', { desc = '[S]earch by [G]rep on Git Root' })
@@ -362,6 +362,50 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 vim.keymap.set('n', '<C-s>', [[:w<CR>]], { noremap = true, silent = true })
 vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-S-s>', ':wq<CR>', { desc = 'Save and Close File' })
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- dude remaps
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
+
+-- Function to select the next instance of the word under the cursor
+local function selectNextInstance()
+    vim.cmd([[
+        let @/='\<<C-r><C-w>\>'
+        set hlsearch
+        norm! Nzzzv
+    ]])
+end
+
+-- Set the keymap for Ctrl+D to call the selectNextInstance function
+vim.api.nvim_set_keymap('n', '<C-d>', [[:lua selectNextInstance()<CR>]], { noremap = true, silent = true })
+
+-- perform a case-insensitive whole-word substitution for the word under the cursor in the entire file
+--
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- change the current file to exec mode
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+-- greatest remap ever
+vim.keymap.set("x", "<leader>p", [["_dP]])
+-- next greatest remap ever : asbjornHaland
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+
+-- for cycling through errors 
+vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+
+-- move selected lines up/down in visual mode
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 vim.keymap.set('n', '<M-Down>', ':m .+1<CR>==', { desc = 'Move line down' })
 vim.keymap.set('n', '<M-Up>', ':m .-2<CR>==', { desc = 'Move line up' })
 
@@ -377,6 +421,7 @@ end
 vim.keymap.set('n', '<C-M-s>', [[:lua save_file_with_prompt()<CR>]], { noremap = true, silent = true })
 
 vim.keymap.set('n', '<C-q>', ':qa<CR>', { desc = 'Quit All' })
+vim.keymap.set('n', '<C-Q>', ':q!<CR>', { desc = 'Quit All' })
 vim.keymap.set('n', '<S-Tab>', ':bp<CR>', { desc = 'Previous Buffer' })
 vim.keymap.set('n', '<Tab>', ':bn<CR>', { desc = 'Next Buffer' })
 vim.keymap.set('n', '<C-n>', ':enew<CR>', { desc = 'New Empty Buffer' })

@@ -33,16 +33,41 @@ extract() {
 
 # --- FZF ---
 # nvim into the file
+
 f() {
-  selected_file=$(fd --type file --hidden --no-ignore . | fzf)
-  [ -n "$selected_file" ] && nvim "$selected_file"
+  search_term="$1"
+  selected_file=$(fd --type file --hidden --no-ignore "$search_term" | fzf)
+  
+  if [ -n "$selected_file" ]; then
+    file_extension="${selected_file##*.}"
+
+    case "$file_extension" in
+      "pdf")
+        zathura "$selected_file"
+        ;;
+      "md")
+        glow "$selected_file"
+        ;;
+      "txt" | "py" | "rs" | "go" )
+        vim "$selected_file"
+        ;;
+      *)
+        # Default case, open with nvim
+        nvim "$selected_file"
+        ;;
+    esac
+
+    # Print the selected file value to stdout
+    echo "$selected_file"
+  fi
 }
+
 
 
 # cd into dir
 ff() {
   local dir
-  dir=$(fd --type d --hidden ${1:-.} | fzf +m) && cd "$dir"
+  dir=$(fd --type file --hidden ${1:-.} | fzf +m) && cd "$(dirname "$dir")"
 }
 
 # search history
@@ -130,7 +155,7 @@ fk() {
 fp() {
 cat /var/log/pacman.log | grep -E "\[ALPM\] (installed|removed|upgraded|upgraded|downgraded)" | awk '{print $1, $2, $3, $4, $5, $6}' | sort -r | fzf
 }
-pfc() {
+fpc() {
 pacman -Qq | fzf --preview='pacman -Qi {}'
 }
 

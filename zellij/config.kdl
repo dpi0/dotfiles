@@ -5,46 +5,58 @@ keybinds clear-defaults=true {
         bind "Alt Q" { Quit; }
         bind "Alt D" { Detach; }
         bind "Alt f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
-        bind "Alt h" "Alt Left" { MoveFocus "Left"; }
-        bind "Alt l" "Alt Right" { MoveFocus "Right"; }
-        bind "Alt j" "Alt Down" { MoveFocus "Down"; }
-        bind "Alt k" "Alt Up" { MoveFocus "Up"; }
-        bind "Alt H" "Alt Left" { GoToPreviousTab; }
-        bind "Alt L" "Alt Right" { GoToNextTab; }
+        bind "Alt h" { MoveFocus "Left"; }
+        bind "Alt l" { MoveFocus "Right"; }
+        bind "Alt j" { MoveFocus "Down"; }
+        bind "Alt k" { MoveFocus "Up"; }
+
+        bind "Alt n" { NewTab; SwitchToMode "Normal"; }
+        bind "Alt 1" { GoToTab 1; SwitchToMode "Normal"; }
+        bind "Alt 2" { GoToTab 2; SwitchToMode "Normal"; }
+        bind "Alt 3" { GoToTab 3; SwitchToMode "Normal"; }
+        bind "Alt 4" { GoToTab 4; SwitchToMode "Normal"; }
+        bind "Alt 5" { GoToTab 5; SwitchToMode "Normal"; }
+        bind "Alt 6" { GoToTab 6; SwitchToMode "Normal"; }
+        bind "Alt 7" { GoToTab 7; SwitchToMode "Normal"; }
+        bind "Alt 8" { GoToTab 8; SwitchToMode "Normal"; }
+        bind "Alt 9" { GoToTab 9; SwitchToMode "Normal"; }
+        bind "Alt J" { NewPane "Down"; SwitchToMode "Normal"; } 
+        bind "Alt L" { NewPane "Right"; SwitchToMode "Normal"; } 
+        bind "Alt X" { CloseFocus; SwitchToMode "Normal"; }
         bind "Alt =" "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
 
-		bind "Alt y" {
-        LaunchOrFocusPlugin "file:~/.config/zellij/plugins/room.wasm" {
-            floating true
-            ignore_case true
+        bind "Alt y" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/room.wasm" {
+                floating true
+                    ignore_case true
+            }
+
+        }
+        bind "Alt v" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/harpoon.wasm" {
+                floating true; 
+                move_to_focused_tab true;
+            }
         }
 
-    }
-		bind "Alt v" {
-        LaunchOrFocusPlugin "file:~/.config/zellij/plugins/harpoon.wasm" {
-            floating true; 
-			move_to_focused_tab true;
+        bind "Alt d" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/monocle.wasm" {
+                floating true
+            };
+            SwitchToMode "Normal"
         }
-    	}
-
-		bind "Alt d" {
-    LaunchOrFocusPlugin "file:~/.config/zellij/plugins/monocle.wasm" {
-        floating true
-    };
-    SwitchToMode "Normal"
-}
     }
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
     }
     shared_except "pane" "locked" {
-        bind "Alt u" { SwitchToMode "Pane"; }
+        bind "Alt i" { SwitchToMode "Pane"; }
     }
     shared_except "resize" "locked" {
-        bind "Alt n" { SwitchToMode "Resize"; }
+        bind "Alt r" { SwitchToMode "Resize"; }
     }
     shared_except "scroll" "locked" {
         bind "Alt s" { SwitchToMode "Scroll"; }
@@ -53,7 +65,7 @@ keybinds clear-defaults=true {
         bind "Alt o" { SwitchToMode "Session"; }
     }
     shared_except "tab" "locked" {
-        bind "Alt i" { SwitchToMode "Tab"; }
+        bind "Alt w" { SwitchToMode "Tab"; }
     }
     shared_except "move" "locked" {
         bind "Alt b" { SwitchToMode "Move"; }
@@ -278,19 +290,19 @@ simplified_ui true
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
 //
 themes {
-        gruvbox {
- 		fg "#FBF1C7"
- 		bg "#181818"
- 		black "#181818"
- 		red "#CC241D"
- 		green "#689D6A"
- 		yellow "#D79921"
- 		blue "#3C8588"
- 		magenta "#B16286"
- 		cyan "#689D6A"
- 		white "#FBF1C7"
- 		orange "#FABD2F"
- 	}   
+    gruvbox {
+        fg "#FBF1C7"
+            bg "#181818"
+            black "#181818"
+            red "#CC241D"
+            green "#689D6A"
+            yellow "#D79921"
+            blue "#3C8588"
+            magenta "#B16286"
+            cyan "#689D6A"
+            white "#FBF1C7"
+            orange "#FABD2F"
+    }   
 }
 
 // Choose the theme that is specified in the themes section.
@@ -315,7 +327,7 @@ theme "gruvbox"
 //   - true (default)
 //   - false
 //
-// mouse_mode false
+mouse_mode false 
 
 // Configure the scroll back buffer size
 // This is the number of lines zellij stores for each pane in the scroll back

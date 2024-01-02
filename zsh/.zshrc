@@ -16,7 +16,7 @@ export YDOTOOL_SOCKET="$HOME/.ydotool_socket"
 
 export CONFIG="$HOME/.config"
 export PATH="$PATH:/home/dpi0/.local/bin"
-# export EDITOR="subl"
+export EDITOR="/usr/bin/nvim"
 # export PATH=$(pwd)/bin:$PATH
 
 # --- fzf ---

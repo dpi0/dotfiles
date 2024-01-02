@@ -1,10 +1,12 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/dpi0/.dotfiles
-- /data/dev/hugo/echo
-- /data/dev/hugo/echo/themes/etch
-- /data/scripts
+- /mnt/shared/notes
 - /data/dev/github/practice-lazygit
+- /data/dev/hugo/echo
+- /data/notes
+- /data/dev/zola/echo
+- /data/scripts
 startuppopupversion: 5
 customcommandshistory: []
 hidecommandlog: false

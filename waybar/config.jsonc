@@ -110,6 +110,7 @@
 			"default": " "
 		},
 		"escape": true,
+		"scroll-step": 0,
 		"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null",
 		"on-click": "playerctl play-pause",
 		"on-click-right": "playerctl next",
