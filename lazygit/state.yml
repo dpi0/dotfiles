@@ -1,13 +1,17 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/dpi0/.dotfiles
+- /data/scripts
 - /mnt/shared/notes
+- /data/dev/github/test
+- /data/dev/github/test/test_inner0
+- /data/dev/github/notes0
+- /data/dev/github/outer
+- /data/dev/github/outer/inner
 - /data/dev/github/practice-lazygit
 - /data/dev/hugo/echo
-- /data/notes
 - /data/dev/zola/echo
-- /data/scripts
 startuppopupversion: 5
 customcommandshistory: []
-hidecommandlog: false
+hidecommandlog: true
 ignorewhitespaceindiffview: false

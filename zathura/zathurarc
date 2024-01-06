@@ -60,8 +60,6 @@ set guioptions ""
 map r reload
 map p print
 map i recolor
-map J zoom out
-map K zoom in
 map R rotate
 unmap f
 map f toggle_fullscreen

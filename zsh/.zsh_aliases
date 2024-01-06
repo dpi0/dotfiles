@@ -46,9 +46,13 @@ alias ps="ps"
 alias date="date"
 alias hct="hyprctl"
 alias code="code"
-alias feh="feh -F"
+alias i="feh -Fd"
 alias fs="fuzzy-sys"
 alias fsu="fzf_systemctl_user_status"
+alias ufw="sudo ufw"
+alias ufws="sudo ufw status numbered"
+alias dw="aria2c"
+alias curl="curlie"
 
 # --- Python and Poetry Aliases ---
 
@@ -101,17 +105,17 @@ alias dpush="d push"
 alias dsrch="d search"
 alias dpull="d pull"
 
-# --- Service Management Aliases ---
+# --- ice Management Aliases ---
 
-alias statusServ="sudo systemctl status"
-alias listServ="sudo systemctl list-unit-files"
-alias startServ="sudo systemctl start"
-alias stopServ="sudo systemctl stop"
-alias blockServ="sudo systemctl mask"
-alias unblockServ="sudo systemctl unmask"
-alias restartServ="sudo systemctl reload-or-restart"
-alias enableServ="sudo systemctl enable"
-alias disableServ="sudo systemctl disable"
+alias status="sudo systemctl status"
+alias list="sudo systemctl list-unit-files"
+alias start="sudo systemctl start"
+alias stop="sudo systemctl stop"
+alias block="sudo systemctl mask"
+alias unblock="sudo systemctl unmask"
+alias restart="sudo systemctl reload-or-restart"
+alias enable="sudo systemctl enable"
+alias disable="sudo systemctl disable"
 
 # --- File Operations Aliases ---
 

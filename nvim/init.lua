@@ -380,7 +380,7 @@ local function selectNextInstance()
 end
 
 -- Set the keymap for Ctrl+D to call the selectNextInstance function
-vim.api.nvim_set_keymap('n', '<C-d>', [[:lua selectNextInstance()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-a>', [[:lua selectNextInstance()<CR>]], { noremap = true, silent = true })
 
 -- perform a case-insensitive whole-word substitution for the word under the cursor in the entire file
 --

@@ -45,8 +45,18 @@ rm -f $HOME/.gitattributes; ln -s $DOTFILES/git/.gitattributes $HOME/.gitattribu
 md $HOME/.local/bin
 ln -s /data/scripts/bash/timer.sh $HOME/.local/bin/timer
 ln -s /data/scripts/bash/doo.sh $HOME/.local/bin/doo
+ln -s /data/scripts/bash/paste.sh $HOME/.local/bin/paste
+ln -s /data/scripts/bash/backup.sh $HOME/.local/bin/bkp
+ln -s /data/scripts/bash/debackup.sh $HOME/.local/bin/dbkp
+ln -s /data/scripts/bash/speedtest.sh $HOME/.local/bin/speedtest
+ln -s /data/scripts/bash/myip.sh $HOME/.local/bin/myip
+ln -s /data/scripts/bash/paste.sh $HOME/.local/bin/pst
+ln -s /data/scripts/bash/paste-file.sh $HOME/.local/bin/pf
+ln -s /data/scripts/bash/paste-file-del.sh $HOME/.local/bin/pfd
 
-#ln -s $DOTFILES/aria2/ $HOME/
+
+
+
 
 # rm -f $CONFIG/libinput-gestures.conf; ln -s $DOTFILES/libinput-gestures/libinput-gestures.conf $CONFIG/libinput-gestures.conf
 # greetd config.toml

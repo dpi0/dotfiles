@@ -39,12 +39,23 @@ action = "Copy"
 key = "C"
 mods = "Control|Shift"
 
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "C"
+mods = "Alt"
+
 [scrolling]
 history = 100000
 multiplier = 3
 
 [shell]
 program = "/usr/bin/zsh"
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+vi_mode_style = "Block" 
 
 [window]
 decorations = "none"

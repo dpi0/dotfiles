@@ -217,6 +217,7 @@
 		"tooltip-format-ethernet": "{ifname} ",
 		"tooltip-format-disconnected": "Disconnected",
 		"format-alt": "  {essid} ({signalStrength}%) {ipaddr}/{cidr} {signaldBm}dBm ",
+		"on-click": "nm-connection-editor",
 		"on-click-right": "nmcli networking on",
 		"on-click-middle": "nmcli networking off",
 		"max-length": 50,
