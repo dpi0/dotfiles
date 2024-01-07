@@ -180,9 +180,18 @@ require('lazy').setup({
           return vim.fn.executable 'make' == 1
         end,
       },
+    opts = {
+      defaults = {
+        layout_strategy = "horizontal",
+        layout_config = { prompt_position = "top" },
+        sorting_strategy = "ascending",
+        winblend = 0,
+        file_ignore_patterns = { "go", ".cache", ".local", "vendor/", "^vendor/" },
+      },
     },
-  },
 
+    },
+    },
   {
     -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
@@ -348,16 +357,24 @@ end
 vim.keymap.set('n', '<leader>s/', telescope_live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
 vim.keymap.set('n', '<leader>ss', require('telescope.builtin').builtin, { desc = '[S]earch [S]elect Telescope' })
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
-vim.api.nvim_set_keymap('n', '<leader>sf', [[<cmd>lua require('telescope.builtin').find_files({ hidden = true })<CR>]], { noremap = true, silent = true, desc = '[S]earch [F]iles' })
+vim.api.nvim_set_keymap('n', '<C-f>', [[<cmd>lua require('telescope.builtin').find_files({ hidden = true })<CR>]], { noremap = true, silent = true, desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.api.nvim_set_keymap('n', '<leader>sg', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], { noremap = true, silent = true, desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
-vim.keymap.set('n', '<leader>e', ':Neotree toggle<cr>', { desc = '[S]earch by [G]rep on Git Root' })
 vim.keymap.set('n', '<leader>c', ':', { desc = '[S]earch by [G]rep on Git Root' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 
+vim.keymap.set('n', '<C-e>', ':Neotree toggle<cr>', { desc = '[S]earch by [G]rep on Git Root' })
+vim.api.nvim_set_keymap('n', '<leader>cb', ':bdelete<CR>', { noremap = true, silent = true })
+-- vim.keymap.set( 'n', '<leader>h', '<C-w>h', { noremap = true, silent = true })
+
+
+vim.api.nvim_set_keymap('x', 'gs', [[y:%s/\<<C-r>=escape(@", '/\')<CR>\>//g<left><left>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('x', 'gd', [[y:%s/\<<C-r>=escape(@", '/\')<CR>\>//g<CR>]], { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<silent> s*', [[:let @/='\<'..expand('<cword>')..'\>'<CR>cgn]], { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('x', '<silent> s*', [[:<C-u>let @/=@s<CR>cgn]], { noremap = true, silent = true })
 
 vim.keymap.set('n', '<C-s>', [[:w<CR>]], { noremap = true, silent = true })
 vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>', { noremap = true, silent = true })
@@ -380,7 +397,7 @@ local function selectNextInstance()
 end
 
 -- Set the keymap for Ctrl+D to call the selectNextInstance function
-vim.api.nvim_set_keymap('n', '<C-a>', [[:lua selectNextInstance()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-a>', ":Alpha<cr>", { noremap = true, silent = true })
 
 -- perform a case-insensitive whole-word substitution for the word under the cursor in the entire file
 --
@@ -421,11 +438,10 @@ end
 vim.keymap.set('n', '<C-M-s>', [[:lua save_file_with_prompt()<CR>]], { noremap = true, silent = true })
 
 vim.keymap.set('n', '<C-q>', ':qa<CR>', { desc = 'Quit All' })
-vim.keymap.set('n', '<C-Q>', ':q!<CR>', { desc = 'Quit All' })
 vim.keymap.set('n', '<S-Tab>', ':bp<CR>', { desc = 'Previous Buffer' })
 vim.keymap.set('n', '<Tab>', ':bn<CR>', { desc = 'Next Buffer' })
-vim.keymap.set('n', '<C-n>', ':enew<CR>', { desc = 'New Empty Buffer' })
-vim.keymap.set('n', '<C-N>', ':tabnew<CR>', { desc = 'New Empty Tab' })
+--vim.keymap.set('n', '<C-n>', ':enew<CR>', { desc = 'New Empty Buffer' })
+--vim.keymap.set('n', '<C-N>', ':tabnew<CR>', { desc = 'New Empty Tab' })
 -- [[ Configure Treesitter ]]
 --
 -- See `:help nvim-treesitter`

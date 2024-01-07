@@ -51,6 +51,7 @@ ln -s /data/scripts/bash/debackup.sh $HOME/.local/bin/dbkp
 ln -s /data/scripts/bash/speedtest.sh $HOME/.local/bin/speedtest
 ln -s /data/scripts/bash/myip.sh $HOME/.local/bin/myip
 ln -s /data/scripts/bash/paste.sh $HOME/.local/bin/pst
+ln -s /data/scripts/bash/meaning.sh $HOME/.local/bin/meaning
 ln -s /data/scripts/bash/paste-file.sh $HOME/.local/bin/pf
 ln -s /data/scripts/bash/paste-file-del.sh $HOME/.local/bin/pfd
 

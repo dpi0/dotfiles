@@ -25,7 +25,8 @@ alias tka="zellij kill-all-sessions"
 
 alias lx="eza --icons -a"
 alias l="eza --icons -a -l"
-alias ls="eza --icons -a -l"
+alias lg="l -g"
+alias ls="l"
 alias lt="eza --icons -a -T"
 alias br="broot -s"
 

@@ -1,6 +1,6 @@
 [Default]
 save_dir=/mnt/shared/screenshots
-save_filename_format=S_%H-%M-%S_%d-%b.jpg
+save_filename_format=FS_%H-%M-%S_%d-%b.png
 show_panel=true
 line_size=5
 text_size=30
