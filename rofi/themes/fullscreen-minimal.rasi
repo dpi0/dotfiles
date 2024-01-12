@@ -1,8 +1,8 @@
 // doc to refer for theming: https://github.com/lbonn/rofi/blob/wayland/doc/rofi-theme.5.markdown
 
 * {
-    font: "JetBrainsMono Nerd Font 23";
-    background: #181818EE;
+    font: "Inter 23";
+    background: #080808EE;
     box-background: #00000000;
     accent-color: #8EC07C;
     test-blue: #0000ff;
@@ -36,15 +36,22 @@ element selected normal, element selected active {
 element selected {
     text-color: @accent-color;
 }
+//element {
+//    orientation: horizontal;
+//    children: [ element-icon, element-text ];
+//    spacing: 20px;
+//}
+element {
+    orientation: horizontal;
+    children: [ element-text ];
+}
 element-text {
     text-color: inherit;
     margin: 10px 0 0 80px;
 }
-element {
-    orientation: horizontal;
-    children: [ element-text ];
-    spacing: 10px;
-}
+//element-icon {
+//    size: 1em;
+//}
 entry {
     cursor-color: @accent-color;
     cursor-width: 3px;

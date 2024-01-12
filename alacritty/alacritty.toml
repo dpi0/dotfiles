@@ -41,7 +41,7 @@ mods = "Control|Shift"
 
 [[keyboard.bindings]]
 action = "ToggleViMode"
-key = "C"
+key = "s"
 mods = "Alt"
 
 [scrolling]

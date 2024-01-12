@@ -18,8 +18,10 @@
 
 [diff]
 	    colorMoved = default
-
-
+[merge]
+	tool = opendiff
+[mergetool "nvim"]
+    cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential

@@ -3,8 +3,9 @@ recentrepos:
 - /home/dpi0/.dotfiles
 - /data/dev/github/test
 - /data/dev/hugo/echo
-- /data/dev/github/scripts
 - /data/scripts
+- /shared/notes
+- /data/dev/github/scripts
 - /data/dev/github/CRT-GRUB-Theme
 - /data/dev/github/practice-lazygit
 startuppopupversion: 5
