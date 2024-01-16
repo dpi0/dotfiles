@@ -1,13 +1,9 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/dpi0/.dotfiles
-- /data/dev/github/test
-- /data/dev/hugo/echo
 - /data/scripts
+- /data/dev
 - /shared/notes
-- /data/dev/github/scripts
-- /data/dev/github/CRT-GRUB-Theme
-- /data/dev/github/practice-lazygit
 startuppopupversion: 5
 customcommandshistory: []
 hidecommandlog: false

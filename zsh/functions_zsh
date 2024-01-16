@@ -31,7 +31,7 @@ editin() {
     fi
 }
 editza() {
-    local aliases_path="$DOTFILES/zsh/.zsh_aliases"
+    local aliases_path="$DOTFILES/zsh/aliases_zsh"
 
     if [[ -f "$aliases_path" ]]; then
         nvim "$aliases_path"
@@ -40,7 +40,7 @@ editza() {
     fi
 }
 editzf() {
-    local functions_path="$DOTFILES/zsh/.zsh_functions"
+    local functions_path="$DOTFILES/zsh/functions_zsh"
 
     if [[ -f "$functions_path" ]]; then
         nvim "$functions_path"
@@ -49,6 +49,24 @@ editzf() {
     fi
 }
 
+edithy() {
+    local functions_path="$DOTFILES/hypr/hyprland.conf"
+
+    if [[ -f "$functions_path" ]]; then
+        nvim "$functions_path"
+    else
+        echo "Error: File not found - $functions_path"
+    fi
+}
+edithyk() {
+    local functions_path="$DOTFILES/hypr/hyprkeybinds.conf"
+
+    if [[ -f "$functions_path" ]]; then
+        nvim "$functions_path"
+    else
+        echo "Error: File not found - $functions_path"
+    fi
+}
 # --- FZF ---
 # nvim into the file
 
@@ -76,7 +94,8 @@ f() {
     esac
 
     # Print the selected file value to stdout
-    echo "$selected_file"
+    echo "$selected_file" | wl-copy
+    echo "--> $selected_file"
   fi
 }
 

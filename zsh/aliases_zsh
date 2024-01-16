@@ -5,20 +5,20 @@ source $DOTFILES/zsh/fsystemctl_zsh
 
 #alias apt="sudo apt"
 #alias n="sudo nala"
-#alias t="tmux"
-#alias ta="t a -t"
-#alias tls="t ls"
-#alias tn="t new-session -s"
-#alias tk="t kill-session -t"
-#alias tr="t rename-session -t"
+alias t="tmux"
+alias ta="t a -t"
+alias tls="t ls"
+alias tn="t new-session -s"
+alias tk="t kill-session -t"
+alias tr="t rename-session -t"
 
-alias t="zellij"
-alias tl="zellij list-sessions"
-alias ta="zellij attach"
-alias td="zellij delete-session"
-alias tda="zellij delete-all-sessions"
-alias tk="zellij kill-session"
-alias tka="zellij kill-all-sessions"
+#alias t="zellij"
+#alias tl="zellij list-sessions"
+#alias ta="zellij attach"
+#alias td="zellij delete-session"
+#alias tda="zellij delete-all-sessions"
+#alias tk="zellij kill-session"
+#alias tka="zellij kill-all-sessions"
 
 
 # --- File Management Aliases ---
@@ -30,6 +30,11 @@ alias ls="l"
 alias lt="eza --icons -a -T"
 alias br="broot -s"
 
+
+# --- cron ---
+
+alias crnew="crontab -e"
+alias crlist="crontab -l"
 
 # --- System Aliases ---
 
@@ -77,7 +82,6 @@ alias ppr="pip freeze > requirements.txt"
 
 # --- docker ---
 
-alias docker="sudo docker"
 alias d="sudo docker"
 alias di="d images"
 alias dps="d ps -a"
@@ -124,11 +128,11 @@ alias disable="sudo systemctl disable"
 # --- File Operations Aliases ---
 
 #alias rem="rm -rfi"
-alias del="trash-put"
-alias dlist="trash-list"
-alias drm="trash-rm"
-alias dclearrem="trash-empty"
-alias drest="trash-restore"
+alias rm="trash-put"
+alias trashl="trash-list"
+alias trashrm="trash-rm"
+alias trashclearrem="trash-empty"
+alias trashrest="trash-restore"
 
 # --- Archive Extraction Alias ---
 
@@ -137,7 +141,7 @@ alias ex="extract"
 # --- File Explorer Aliases ---
 
 alias opene="explorer.exe ."
-alias open="nautilus ."
+alias open="thunar ."
 
 # --- Editor Aliases ---
 
