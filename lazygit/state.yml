@@ -1,8 +1,8 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/dpi0/.dotfiles
+- /data/dev/astro/echolocate
 - /data/scripts
-- /data/dev
 - /shared/notes
 startuppopupversion: 5
 customcommandshistory: []

@@ -2,7 +2,7 @@
 	"layer": "top",
 	"position": "top",
 	"spacing": 18,
-	"margin-bottom": 2,
+	"margin-bottom": 0,
 	// "start_hidden": "true",
 	"modules-left": [
 		"hyprland/workspaces",
