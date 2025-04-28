@@ -1,0 +1,12 @@
+**/.env
+
+# SSH
+.ssh/
+*.pem
+*.pub
+*.key
+
+**/node_modules/
+
+lazygit/state.yml
+nvim/lazy-lock.json
