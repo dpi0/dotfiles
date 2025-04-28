@@ -1,0 +1,18 @@
+swipe:
+  3:
+    left:
+      sendkey: "LEFTCTRL+LEFTSHIFT+TAB"
+    right:
+      sendkey: "LEFTCTRL+TAB"
+    up:
+      sendkey: "LEFTCTRL+W"
+    down:
+      sendkey: "F5"
+  4:
+    down:
+      sendkey: "LEFTMETA+A"
+    up:
+      sendkey: "LEFTMETA+Slash"
+# hold:
+#   3:
+#     sendkey: "LEFTCTRL+T"
