@@ -1,0 +1,63 @@
+// https://github.com/lbonn/rofi/blob/wayland/doc/rofi-theme.5.markdown
+
+* {
+    font: "SF Pro Display 22";
+    background: #080808CC;
+    box-background: #00000000;
+    accent-color: #789FEE;
+    test-blue: #0000ff;
+    foreground: #BFC8E0;
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+window {
+    background-color: @background;
+    fullscreen: true;
+}
+
+mainbox {
+    background-color: @box-background;
+    margin: 30% 20% 10% 36%;
+}
+
+inputbar {
+    spacing: 10px;
+    //background-color: @test-blue;
+    margin: 0 0 10px 0;
+    children: [ "textbox-prompt-colon", "entry"];
+}
+
+textbox-prompt-colon {
+    enabled: true;
+    str: "run:";
+    text-color: @accent-color;
+    expand: false;
+}
+
+element selected normal, element selected active {
+    //background-color: @test-blue;
+}
+
+element selected {
+    text-color: @accent-color;
+}
+
+element {
+    orientation: horizontal;
+    children: [ element-text ];
+}
+
+element-text {
+    text-color: inherit;
+    margin: 10px 0 0 80px;
+}
+
+entry {
+    cursor-color: @accent-color;
+    cursor-width: 3px;
+}
+
+listview {
+    spacing: 10px;
+}
