@@ -1,0 +1,74 @@
+* {
+    font-family: "SF Pro Text";
+    font-size: 13.5px;
+    color: #ffffff;
+}
+
+window#waybar {
+    background-color: #060609;
+}
+
+#window {
+    color: red;
+}
+
+#workspaces button {
+    padding: 0 3px;
+    border: none;
+    background: transparent;
+}
+
+#workspaces button.active {
+    background: #0564cc;
+    border-radius: 0px;
+}
+
+#clock {
+    color: #96f3ff;
+    padding-right: 10px;
+}
+
+#network #custom-power #cpu #memory #battery #network #custom-weather #user #backlight #pulseaudio #pulseaudio.microphone #bluetooth #custom-music #custom-audio_idle_inhibitor #network #tray {
+    color: #fff;
+    /* padding: 0 10px; */
+}
+
+#battery {
+    color: #ffb3fa;
+}
+
+#backlight {
+    color: #fffdb3;
+}
+
+#mpris {
+    color: #b3ffb4;
+}
+
+#pulseaudio.microphone {
+    color: #ffb3c8;
+}
+
+#network {
+    color: #b3bbff;
+}
+
+#bluetooth {
+    color: #b3d3ff;
+}
+
+#cpu {
+    color: #dcffb3;
+}
+
+#memory {
+    color: #ffd3b3;
+}
+
+#temperature {
+    color: #e8eaa5;
+}
+
+#temperature.critical {
+    color: #f2282b;
+}
