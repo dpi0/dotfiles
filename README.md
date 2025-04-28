@@ -4,6 +4,10 @@ Desktop configuration.
 
 Run `./install.sh` to create symlinks + take backup of your previous config.
 
+![desktop](https://github.com/user-attachments/assets/a7f06be4-bb35-4e08-900e-906e60caa926)
+
+<p align="center">Wallpaper from <a href="https://github.com/makccr/wallpapers/blob/master/wallpapers/win-mac/OSX-10-9-6k.jpg">makccr/wallpapers</a></p>
+
 ### Essential Apps
 
 - **[dunst](https://github.com/dunst-project/dunst)**: Lightweight and customizable notification daemon for X11 and Wayland environments.
