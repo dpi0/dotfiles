@@ -1,1 +1,3 @@
-@theme ".dotfiles/rofi/fullscreen-center-blur-theme.rasi"
+// @theme '.dotfiles/rofi/default-dump.rasi'
+// @theme ".dotfiles/rofi/themes/fullscreen-center-blur-theme.rasi"
+@theme ".dotfiles/rofi/themes/minimal-fullscreen.rasi"

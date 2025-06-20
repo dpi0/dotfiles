@@ -4,7 +4,11 @@
     font: "SF Pro Display 22";
     background: #080808CC;
     box-background: #00000000;
-    accent-color: #789FEE;
+    // accent-color: #B0BA29;
+    // accent-color: #0564CC;
+    accent-color: #FF73A8;
+    highlight-search-text: #00C2FF; 
+    // my_highlight: bold #00C2FF;
     test-blue: #0000ff;
     foreground: #BFC8E0;
     background-color: transparent;
@@ -51,6 +55,8 @@ element {
 element-text {
     text-color: inherit;
     margin: 10px 0 0 80px;
+    // highlight: @highlight-search-text;
+    highlight: bold underline #00C2FF;
 }
 
 entry {
