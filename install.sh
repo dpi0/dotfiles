@@ -45,10 +45,12 @@ link "$DOTFILES_DIR/rofi" "$CONFIG_DIR/rofi"
 # link "$DOTFILES_DIR/vscode/Code/User" "$CONFIG_DIR/Code/User"
 # link "$DOTFILES_DIR/vscode/argv.json" "$HOME/.vscode/argv.json"
 link "$DOTFILES_DIR/waybar" "$CONFIG_DIR/waybar"
-link "$DOTFILES_DIR/wezterms" "$CONFIG_DIR/wezterms"
+link "$DOTFILES_DIR/wezterm" "$CONFIG_DIR/wezterm"
+link "$DOTFILES_DIR/activitywatch" "$CONFIG_DIR/activitywatch"
 link "$DOTFILES_DIR/.zprofile" "$HOME/.profile"
 link "$DOTFILES_DIR/.zprofile" "$HOME/.zprofile"
 
+# sudo mv /etc/greetd/config.toml /etc/greetd/config.toml.bak.$(date +"%d-%B-%Y_%H-%M-%S")
 # sudo ln -s $HOME/.dotfiles/greetd/config.toml /etc/greetd/config.toml
 
 echo "✅ Dotfiles installation complete."
