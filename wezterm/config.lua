@@ -6,6 +6,7 @@ local config = wezterm.config_builder and wezterm.config_builder() or {}
 
 config.term = "xterm-256color"
 config.front_end = "OpenGL"
+config.enable_wayland = true
 config.max_fps = 144
 config.animation_fps = 1
 config.cursor_blink_ease_in = "Constant"
@@ -27,7 +28,7 @@ config.font = wezterm.font("JetBrains Mono", { weight = "Bold" })
 config.enable_tab_bar = true
 config.window_background_opacity = 0.9
 config.prefer_egl = true
-config.default_prog = { "bash" }
+config.default_prog = { "zsh" }
 config.initial_cols = 100
 config.window_background_image_hsb = {
   brightness = 0.1,
