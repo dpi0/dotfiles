@@ -3,6 +3,7 @@
   background-color: transparent;
   border: none;
   box-shadow: none;
+  transition: 0;
 }
 
 window {
@@ -19,13 +20,14 @@ button {
   padding: 0px;
   margin: 0px;
   transition: filter 0.1s ease-in-out;
+  font-size: 1.1rem;
+  color: #f6f8fa;
 }
 
 button:focus,
 button:active,
 button:hover {
-  filter: drop-shadow(0 0 0px #0564cc) drop-shadow(0 0 4px #0564cc)
-    drop-shadow(0 0 8px #0564cc);
+  filter: drop-shadow(0 0 10px rgba(5, 100, 204, 0.8)) drop-shadow(0 0 30px rgba(5, 100, 204, 0.8)) drop-shadow(0 0 60px rgba(5, 100, 204, 0.8));
 }
 
 #lock {

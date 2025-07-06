@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "waylock -ignore-empty-password  -init-color '0x000000'  -input-color '0x281D4E' -input-alt-color '0x252535' -fail-color '0xE82424'",
+    "action" : "hyprlock",
     "text" : "Lock",
     "keybind" : "l"
 }
@@ -14,19 +14,19 @@
     "label" : "logout",
     "action" : "loginctl terminate-user $USER",
     "text" : "Logout",
-    "keybind" : "e"
+    "keybind" : "o"
 }
 {
     "label" : "shutdown",
     "action" : "systemctl poweroff",
     "text" : "Shutdown",
-    "keybind" : "s"
+    "keybind" : "u"
 }
 {
     "label" : "suspend",
     "action" : "systemctl suspend",
     "text" : "Suspend",
-    "keybind" : "u"
+    "keybind" : "s"
 }
 {
     "label" : "reboot",
