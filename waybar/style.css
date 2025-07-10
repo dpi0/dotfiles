@@ -1,74 +1,104 @@
 * {
-    font-family: "SF Pro Text";
-    font-size: 13.5px;
-    color: #ffffff;
+  font-family: "SF Pro Text";
+  font-size: 13.5px;
+  color: #ffffff;
 }
 
 window#waybar {
-    background-color: #060609;
+  background-color: #060609;
 }
 
 #window {
-    color: red;
+  color: red;
 }
 
 #workspaces button {
-    padding: 0 3px;
-    border: none;
-    background: transparent;
+  padding: 0 3px;
+  border: none;
+  background: transparent;
 }
 
 #workspaces button.active {
-    background: #0564cc;
-    border-radius: 0px;
+  background: #9c593c;
+  /* background: #0564cc; */
+  border-radius: 0px;
 }
 
 #clock {
-    color: #96f3ff;
-    padding-right: 10px;
+  color: #96f3ff;
+  padding-right: 10px;
 }
 
-#network #custom-power #cpu #memory #battery #network #custom-weather #user #backlight #pulseaudio #pulseaudio.microphone #bluetooth #custom-music #custom-audio_idle_inhibitor #network #tray {
-    color: #fff;
-    /* padding: 0 10px; */
+#network
+  #custom-power
+  #cpu
+  #memory
+  #battery
+  #network
+  #custom-weather
+  #user
+  #backlight
+  #pulseaudio
+  #pulseaudio.microphone
+  #bluetooth
+  #custom-music
+  #custom-audio_idle_inhibitor
+  #network
+  #tray {
+  color: #fff;
+  /* padding: 0 10px; */
 }
 
 #battery {
-    color: #ffb3fa;
+  color: #ffb3fa;
 }
 
 #backlight {
-    color: #fffdb3;
+  color: #ffe699;
 }
 
 #mpris {
-    color: #b3ffb4;
+  color: #b3ffb4;
 }
 
-#pulseaudio.microphone {
-    color: #ffb3c8;
+#pulseaudio {
+  color: #fec98f;
+}
+
+#pulseaudio.muted {
+  color: #ff5f5f;
 }
 
 #network {
-    color: #b3bbff;
+  color: #b3bbff;
 }
 
 #bluetooth {
-    color: #b3d3ff;
+  color: #b3d3ff;
 }
 
 #cpu {
-    color: #dcffb3;
+  color: #dcffb3;
 }
 
 #memory {
-    color: #ffd3b3;
+  color: #ffd3b3;
 }
 
 #temperature {
-    color: #e8eaa5;
+  color: #e2cbf7;
 }
 
 #temperature.critical {
-    color: #f2282b;
+  /* color: #f2282b; */
+  color: #ff5f5f;
+}
+
+#custom-fullscreen {
+  color: #f6ea2c;
+}
+
+#custom-headphones {
+  /* color: #8ffc65; */
+  color: #f78ca7;
 }

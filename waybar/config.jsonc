@@ -1,145 +1,164 @@
 {
-    "layer": "top",
-    "position": "top",
-    "spacing": 12,
-    "style": "$HOME/.dotfiles/waybar/style.css",
-    "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window"
-    ],
-    "modules-center": [],
-    "modules-right": [
-        "tray",
-        "mpris",
-        "bluetooth",
-        // "disk",
-        "memory",
-        "cpu",
-        "temperature",
-        //"pulseaudio#microphone",
-        "network",
-        //"pulseaudio",
-        //"backlight",
-        "battery",
-        "clock"
-    ],
-    "hyprland/workspaces": {
-        "format": "{name}"
-        // "format": "{icon}",
-        // "format-window-separator": " ",
-        // "window-rewrite-default": " ",
-        // "window-rewrite": {
-        //     "title<.*youtube.*>": " ", // Windows whose titles contain "youtube"
-        //     "class<firefox>": " ", // Windows whose classes are "firefox"
-        //     "class<alacritty>": " ",
-        //     "class<thunar>": " ",
-        //     "class<org.gnome.loupe>": " ",
-        //     "class<virt-manager>": " ",
-        //     "class<firefox> title<.*github.*>": " ",
-        //     "class<firefox> title<.*/.*>": " ",
-        //     "code": "󰨞 "
-        // }
+  "layer": "top",
+  "position": "top",
+  "spacing": 12,
+  "style": "$HOME/.dotfiles/waybar/style.css",
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-center": [],
+  "modules-right": [
+    // "custom/hyprland_clients",
+    "custom/fullscreen",
+    "custom/headphones",
+    "tray",
+    "mpris",
+    "bluetooth",
+    // "disk",
+    // "memory",
+    // "cpu",
+    "temperature",
+    "pulseaudio",
+    // "pulseaudio#microphone",
+    "network",
+    // "backlight",
+    "battery",
+    "clock",
+  ],
+  "hyprland/workspaces": {
+    "format": "{name}",
+    // "format": "{icon}",
+    // "format-window-separator": " ",
+    // "window-rewrite-default": " ",
+    // "window-rewrite": {
+    //     "title<.*youtube.*>": " ", // Windows whose titles contain "youtube"
+    //     "class<firefox>": " ", // Windows whose classes are "firefox"
+    //     "class<alacritty>": " ",
+    //     "class<thunar>": " ",
+    //     "class<org.gnome.loupe>": " ",
+    //     "class<virt-manager>": " ",
+    //     "class<firefox> title<.*github.*>": " ",
+    //     "class<firefox> title<.*/.*>": " ",
+    //     "code": "󰨞 "
+    // }
+  },
+  "hyprland/window": {
+    "format": "{title}",
+    "icon": true,
+    "icon-size": 18,
+    "max-length": 50,
+  },
+  "custom/headphones": {
+    "exec": "~/scripts/detect-headphone-jack.sh",
+    "return-type": "json",
+    "interval": 3,
+    "tooltip": true,
+  },
+  "custom/fullscreen": {
+    "exec": "~/scripts/check-window-fullscreen-status.sh",
+    "interval": 3,
+  },
+  // https://red.ngn.tf/r/hyprland/comments/17ywmtm/how_to_let_me_know_that_im_in_fullscreen/kjuk87x/?context=3#kjuk87x
+  // https://github.com/Alexays/Waybar/issues/672#issuecomment-2198432615
+  "custom/hyprland_clients": {
+    "exec": "~/scripts/ipc_event_polling_hyprland.sh",
+    // "format": "[{}]",
+    "format": "{}",
+  },
+  "clock": {
+    "format": "{:%a %d %b %H:%M}",
+    "tooltip": false,
+    "on-click": "hyprctl dispatch workspace 1; xdg-open 'https://calendar.google.com/calendar/u/0'",
+  },
+  "temperature": {
+    "interval": 10,
+    // "thermal-zone": 2,
+    "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
+    "critical-threshold": 70,
+    "on-click": "kitty btop",
+    "format-critical": "  {temperatureC}°C",
+    "format": "{temperatureC}°C",
+  },
+  "bluetooth": {
+    // Don't show anything when bluetooth is off
+    "format": "",
+    "format-connected": " {device_alias}",
+    "on-click": "kitty bluetui",
+    // Show only the bluetooth icon when turned on
+    "format-on": "",
+    // "format-connected-battery": " {device_alias} - {device_battery_percentage}%",
+    "format-disabled": "", // an empty format will hide the module
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+  },
+  "network": {
+    "interface": "wlp3s0",
+    "format": "{ifname}",
+    "on-click": "nmcli device wifi rescan && kitty ~/scripts/nm-tui-delay.sh",
+    "on-click-right": "nmcli device wifi rescan",
+    // "format-wifi": "  {signalStrength}%" ,
+    "format-wifi": " ",
+    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+    "format-disconnected": "", //An empty format will hide the module.
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    // "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    // "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 50,
+    "max-length": 50,
+  },
+  "cpu": {
+    "interval": 30,
+    "format": "󰈸 {usage}% {avg_frequency} GHz",
+    "on-click": "kitty btop",
+  },
+  "disk": {
+    "interval": 300,
+    "format": "󰋊  {free}",
+    "path": "/",
+    "on-click": "kitty btop",
+  },
+  "memory": {
+    "interval": 30,
+    "tooltip": false,
+    "format": "󰍛 {used:0.1f}G",
+    "on-click": "kitty btop",
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10,
+  },
+  "mpris": {
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "max-length": 50,
+    "player-icons": {
+      "default": "󰎇 ",
+      "mpv": " ",
+      "spotify": " ",
     },
-    "hyprland/window": {
-        "format": "{title}",
-        "icon": true,
-        "icon-size": 18,
-        "max-length": 50
+    "status-icons": {
+      "paused": "󰏤",
     },
-    "clock": {
-        "format": "󱑑  {:%a %d %b %H:%M}",
-        "tooltip": false
+    // "ignored-players": ["firefox"]
+  },
+  "battery": {
+    "interval": 1,
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-alt": "{icon} {time}",
+    "states": {
+      "warning": 30,
+      "critical": 15,
     },
-    "temperature": {
-        "interval": 20,
-        // "thermal-zone": 2,
-        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
-        "critical-threshold": 70,
-        "format-critical": "  {temperatureC}°C",
-        "format": "{temperatureC}°C"
-    },
-    "bluetooth": {
-        // Don't show anything when bluetooth is off
-        "format": "",
-        "format-connected": " {device_alias}",
-        "on-click": "foot bluetui",
-        // Show only the bluetooth icon when turned on
-        "format-on": "",
-        // "format-connected-battery": " {device_alias} - {device_battery_percentage}%",
-        "format-disabled": "", // an empty format will hide the module
-        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
-    },
-    "network": {
-        "interface": "wlp3s0",
-        "format": "{ifname}",
-        "on-click": "nmcli device wifi rescan && foot ~/scripts/nm-tui-delay.sh",
-        "on-click-right": "nmcli device wifi rescan",
-        // "format-wifi": "  {signalStrength}%" ,
-        "format-wifi": " ",
-        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-        "format-disconnected": "", //An empty format will hide the module.
-        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-        // "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-        "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-        // "tooltip-format-ethernet": "{ifname} ",
-        "tooltip-format-disconnected": "Disconnected",
-        "interval": 50,
-        "max-length": 50
-    },
-    "cpu": {
-        "interval": 30,
-        "format": "󰈸 {usage}% {avg_frequency} GHz",
-        "on-click": "foot btop"
-    },
-    "disk": {
-        "interval": 300,
-        "format": "󰋊  {free}",
-        "path": "/",
-        "on-click": "foot btop"
-    },
-    "memory": {
-        "interval": 30,
-        "tooltip": false,
-        "format": "󰍛 {used:0.1f}G",
-        "on-click": "foot btop"
-    },
-    "tray": {
-        "icon-size": 16,
-        "spacing": 10
-    },
-    "mpris": {
-        "format": "{player_icon} {dynamic}",
-        "format-paused": "{status_icon} <i>{dynamic}</i>",
-        "max-length": 60,
-        "player-icons": {
-            "default": "󰎇 ",
-            "mpv": " ",
-            "spotify": " "
-        },
-        "status-icons": {
-            "paused": "󰏤"
-        }
-        // "ignored-players": ["firefox"]
-    },
-    "battery": {
-        "interval": 30,
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-alt": "{icon} {time}",
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format-icons": [
-            "  ",
-            "  ",
-            "  ",
-            "  ",
-            "  "
-        ]
-    }
+    "format-icons": ["  ", "  ", "  ", "  ", "  "],
+  },
+  "pulseaudio": {
+    "format": "󰕾  {volume}%",
+    // "format-muted": "   Muted",
+    "format-muted": "Muted",
+    "scroll-step": 5,
+  },
 }
