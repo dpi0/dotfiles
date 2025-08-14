@@ -1,0 +1,13 @@
+code --install-extension charliermarsh.ruff
+code --install-extension github.copilot
+code --install-extension github.copilot-chat
+code --install-extension golang.go
+code --install-extension lamarcke.kanagawa-black
+code --install-extension ms-python.debugpy
+code --install-extension ms-python.python
+code --install-extension ms-python.vscode-pylance
+code --install-extension ms-vscode-remote.remote-ssh
+code --install-extension ms-vscode-remote.remote-ssh-edit
+code --install-extension ms-vscode.remote-explorer
+code --install-extension oderwat.indent-rainbow
+code --install-extension vscode-icons-team.vscode-icons
