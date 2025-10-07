@@ -1,16 +1,14 @@
 * {
-  // font: "JetBrainsMono NF 15";
-  font: "SF Pro Display 20";
+  font: "JetBrainsMono NF 20";
+  // font: "SF Pro Display 20";
   background: #080808CC;
   box-background: #00000000;
-  accent-color: #FF5D00;
   // accent-color: #B0BA29;
   // accent-color: #00C2FF;
-  // accent-color: #FF73A8;
+  accent-color: #FF5D00;
   // accent-color: #F57943;
   // accent-color: #0045E5;
-  // highlight-search-text: #00C2FF;
-  highlight-search-text: #FF8500;
+  highlight-search-text: #00C2FF;
   foreground: #BFC8E0;
   background-color: transparent;
   text-color: @foreground;
@@ -20,7 +18,10 @@
 window {
   background-color: @background;
   fullscreen: true;
-  width: 500px;
+  // width: 500px;
+  // padding: 20px;
+  // height: 500px;
+  // border-radius: 5px;
 }
 
 mainbox {
