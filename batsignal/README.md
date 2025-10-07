@@ -11,6 +11,6 @@ mkdir -p ~/.config/systemd/user/batsignal.service.d
 cp ~/.dotfiles/batsignal/options.conf ~/.config/systemd/user/batsignal.service.d/options.conf
 
 systemctl --user daemon-reload
-
+systemctl --user restart batsignal.service
 systemctl --user status batsignal.service
 ```
