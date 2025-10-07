@@ -12,6 +12,12 @@ window#waybar {
   color: red;
 }
 
+window#waybar #workspaces button,
+window#waybar #workspaces button.active,
+window#waybar #workspaces button:hover {
+  transition: none;
+}
+
 #workspaces button {
   padding: 0 3px;
   border: none;
@@ -19,9 +25,12 @@ window#waybar {
 }
 
 #workspaces button.active {
-  background: #9c593c;
-  /* background: #0564cc; */
+  background: #fc844e;
   border-radius: 0px;
+}
+
+#workspaces button.active label {
+  color: #000000;
 }
 
 #clock {
@@ -101,4 +110,12 @@ window#waybar {
 #custom-headphones {
   /* color: #8ffc65; */
   color: #f78ca7;
+}
+
+#network.disconnected {
+  color: #ff5f5f;
+}
+
+#network.disabled {
+  color: #ffaa00;
 }

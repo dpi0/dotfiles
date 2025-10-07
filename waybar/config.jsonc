@@ -47,13 +47,13 @@
     "max-length": 50,
   },
   "custom/headphones": {
-    "exec": "~/scripts/detect-headphone-jack.sh",
+    "exec": "~/scripts/detect-headphone-jack-waybar.sh",
     "return-type": "json",
     "interval": 3,
     "tooltip": true,
   },
   "custom/fullscreen": {
-    "exec": "~/scripts/check-window-fullscreen-status.sh",
+    "exec": "~/scripts/check-window-fullscreen-status-waybar.sh",
     "interval": 3,
   },
   // https://red.ngn.tf/r/hyprland/comments/17ywmtm/how_to_let_me_know_that_im_in_fullscreen/kjuk87x/?context=3#kjuk87x
@@ -66,7 +66,7 @@
   "clock": {
     "format": "{:%a %d %b %H:%M}",
     "tooltip": false,
-    "on-click": "hyprctl dispatch workspace 1; xdg-open 'https://calendar.google.com/calendar/u/0'",
+    // "on-click": "hyprctl dispatch workspace 1; xdg-open 'https://calendar.google.com/calendar/u/0'",
   },
   "temperature": {
     "interval": 10,
@@ -96,15 +96,13 @@
     "format": "{ifname}",
     "on-click": "nmcli device wifi rescan && kitty ~/scripts/nm-tui-delay.sh",
     "on-click-right": "nmcli device wifi rescan",
-    // "format-wifi": "  {signalStrength}%" ,
     "format-wifi": " ",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-    "format-disconnected": "", //An empty format will hide the module.
+    "format-disconnected": "  Disconnected",
+    "format-disabled": "󰀝 Airplane Mode",
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-    // "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    // "tooltip-format-ethernet": "{ifname} ",
     "tooltip-format-disconnected": "Disconnected",
     "interval": 50,
     "max-length": 50,
