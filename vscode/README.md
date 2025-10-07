@@ -1,4 +1,4 @@
-# `vscode
+# `visual-studio-code`
 
 - `./settings.json` goes in `$HOME/.config/Code/User/settings.json`
 - `./keybindings.json` goes in `$HOME/.config/Code/User/keybindings.json`
