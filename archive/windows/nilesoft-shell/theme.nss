@@ -5,7 +5,7 @@ theme
 	background
 	{
 		color=auto
-		opacity=0
+		opacity=50
 		effect=0
 	}
 	image.align=2
