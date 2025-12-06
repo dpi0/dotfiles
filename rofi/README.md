@@ -1,5 +1,9 @@
-# `rofi`
+# Rofi
 
-![rofi](https://github.com/user-attachments/assets/9a937102-0c29-40c8-a75a-bfddd931d4dd)
+<https://github.com/davatorium/rofi>
 
-![rofimoji](https://github.com/user-attachments/assets/1370d817-e6ee-464f-b743-39ab0656e495)
+⭐ The Everything Selector.
+
+```bash
+ln -s ~/.dotfiles/rofi/ ~/.config/
+```

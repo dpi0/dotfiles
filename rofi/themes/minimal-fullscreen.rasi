@@ -1,16 +1,9 @@
 * {
-  // font: "JetBrainsMono NF 15";
   font: "SF Pro Display 20";
   background: #080808CC;
   box-background: #00000000;
-  accent-color: #FF5D00;
-  // accent-color: #B0BA29;
-  // accent-color: #00C2FF;
-  // accent-color: #FF73A8;
-  // accent-color: #F57943;
-  // accent-color: #0045E5;
-  // highlight-search-text: #00C2FF;
-  highlight-search-text: #FF8500;
+  accent-color: #E9164B;
+  highlight-search-text: #E9164B; // Search input text
   foreground: #BFC8E0;
   background-color: transparent;
   text-color: @foreground;
@@ -20,7 +13,6 @@
 window {
   background-color: @background;
   fullscreen: true;
-  width: 500px;
 }
 
 mainbox {
@@ -33,7 +25,6 @@ inputbar {
 
 textbox-prompt-colon {
   enabled: true;
-  // str: "run:";
   str: "# ";
   text-color: @accent-color;
   expand: false;
@@ -50,7 +41,7 @@ element {
 
 element-text {
   text-color: inherit;
-  highlight: bold underline #FF8500;
+  highlight: bold underline #E9164B;  // NOTE: Found no way to have a variable here
 }
 
 element-icon {
