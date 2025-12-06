@@ -1,7 +1,0 @@
-[Unit]
-Description=Regular Backup of Installed Packages
-After=network.target
-
-[Service]
-ExecStart=%h/scripts/backup-pkg-list.sh
-Type=oneshot

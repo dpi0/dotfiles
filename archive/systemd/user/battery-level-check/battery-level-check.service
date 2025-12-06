@@ -1,9 +1,0 @@
-[Unit]
-Description=Battery level check every few minutes
-
-[Service]
-Type=simple
-ExecStart=%h/scripts/battery-check.sh
-
-[Install]
-WantedBy=default.target

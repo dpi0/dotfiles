@@ -1,9 +1,0 @@
-[Unit]
-Description=Run Watchtower Once
-After=network-online.target docker.service
-Requires=docker.service
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/docker run -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --run-once
-
