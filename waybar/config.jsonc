@@ -6,39 +6,19 @@
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-center": [],
   "modules-right": [
-    // "custom/hyprland_clients",
     "custom/fullscreen",
     "custom/headphones",
     "tray",
     "mpris",
     "bluetooth",
-    // "disk",
-    // "memory",
-    // "cpu",
     "temperature",
     "pulseaudio",
-    // "pulseaudio#microphone",
     "network",
-    // "backlight",
     "battery",
     "clock",
   ],
   "hyprland/workspaces": {
     "format": "{name}",
-    // "format": "{icon}",
-    // "format-window-separator": " ",
-    // "window-rewrite-default": " ",
-    // "window-rewrite": {
-    //     "title<.*youtube.*>": " ", // Windows whose titles contain "youtube"
-    //     "class<firefox>": " ", // Windows whose classes are "firefox"
-    //     "class<alacritty>": " ",
-    //     "class<thunar>": " ",
-    //     "class<org.gnome.loupe>": " ",
-    //     "class<virt-manager>": " ",
-    //     "class<firefox> title<.*github.*>": " ",
-    //     "class<firefox> title<.*/.*>": " ",
-    //     "code": "󰨞 "
-    // }
   },
   "hyprland/window": {
     "format": "{title}",
@@ -56,21 +36,13 @@
     "exec": "~/scripts/check-window-fullscreen-status-waybar.sh",
     "interval": 3,
   },
-  // https://red.ngn.tf/r/hyprland/comments/17ywmtm/how_to_let_me_know_that_im_in_fullscreen/kjuk87x/?context=3#kjuk87x
-  // https://github.com/Alexays/Waybar/issues/672#issuecomment-2198432615
-  "custom/hyprland_clients": {
-    "exec": "~/scripts/ipc_event_polling_hyprland.sh",
-    // "format": "[{}]",
-    "format": "{}",
-  },
   "clock": {
     "format": "{:%a %d %b %H:%M}",
     "tooltip": false,
-    // "on-click": "hyprctl dispatch workspace 1; xdg-open 'https://calendar.google.com/calendar/u/0'",
+    "on-click": "hyprctl dispatch workspace 1; xdg-open 'https://calendar.google.com/calendar/u/0'",
   },
   "temperature": {
-    "interval": 10,
-    // "thermal-zone": 2,
+    "interval": 60,
     "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
     "critical-threshold": 70,
     "on-click": "kitty btop",
@@ -78,13 +50,10 @@
     "format": "{temperatureC}°C",
   },
   "bluetooth": {
-    // Don't show anything when bluetooth is off
-    "format": "",
+    "format": "", // Don't show anything when bluetooth is off
     "format-connected": " {device_alias}",
     "on-click": "kitty bluetui",
-    // Show only the bluetooth icon when turned on
-    "format-on": "",
-    // "format-connected-battery": " {device_alias} - {device_battery_percentage}%",
+    "format-on": "", // Show only the bluetooth icon when turned on
     "format-disabled": "", // an empty format will hide the module
     "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
@@ -94,7 +63,7 @@
   "network": {
     "interface": "wlp3s0",
     "format": "{ifname}",
-    "on-click": "nmcli device wifi rescan && kitty ~/scripts/nm-tui-delay.sh",
+    "on-click": "nmcli device wifi rescan && kitty nmtui",
     "on-click-right": "nmcli device wifi rescan",
     "format-wifi": " ",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
@@ -131,16 +100,15 @@
   "mpris": {
     "format": "{player_icon} {dynamic}",
     "format-paused": "{status_icon} <i>{dynamic}</i>",
-    "max-length": 50,
+    "max-length": 65,
     "player-icons": {
       "default": "󰎇 ",
       "mpv": " ",
-      "spotify": " ",
+      "spotify": "󰎇 ",
     },
     "status-icons": {
       "paused": "󰏤",
     },
-    // "ignored-players": ["firefox"]
   },
   "battery": {
     "interval": 1,
@@ -155,7 +123,6 @@
   },
   "pulseaudio": {
     "format": "󰕾  {volume}%",
-    // "format-muted": "   Muted",
     "format-muted": "Muted",
     "scroll-step": 5,
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",

@@ -25,7 +25,7 @@ window#waybar #workspaces button:hover {
 }
 
 #workspaces button.active {
-  background: #fc844e;
+  background: #da3775;
   border-radius: 0px;
 }
 
@@ -55,7 +55,6 @@ window#waybar #workspaces button:hover {
   #network
   #tray {
   color: #fff;
-  /* padding: 0 10px; */
 }
 
 #battery {
@@ -99,7 +98,6 @@ window#waybar #workspaces button:hover {
 }
 
 #temperature.critical {
-  /* color: #f2282b; */
   color: #ff5f5f;
 }
 
@@ -108,7 +106,6 @@ window#waybar #workspaces button:hover {
 }
 
 #custom-headphones {
-  /* color: #8ffc65; */
   color: #f78ca7;
 }
 
