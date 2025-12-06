@@ -3,8 +3,7 @@
 Notification daemon.
 
 ```bash
-mkdir -p ~/.config/dunst
-ln -sf ~/.dotfiles/dunst/dunstrc ~/.config/dunst/dunstrc
+ln -s ~/.dotfiles/dunst/ ~/.config/
 
 # TO restart the daemon and apply the configuration
 killall dunst
