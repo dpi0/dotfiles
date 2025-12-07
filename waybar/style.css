@@ -25,7 +25,7 @@ window#waybar #workspaces button:hover {
 }
 
 #workspaces button.active {
-  background: #da3775;
+  background: #e9164b;
   border-radius: 0px;
 }
 
