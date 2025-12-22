@@ -1,118 +1,53 @@
 * {
-  font-family: "SF Pro Text";
-  font-size: 13.5px;
-  color: #ffffff;
+  font-family: "SF Pro Display";
+  color: #ffe6f0;
+  background: #000;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 0px;
 }
 
-window#waybar {
-  background-color: #060609;
+#workspaces button.active label {
+  color: #e9164b;
 }
 
-#window {
-  color: red;
+#workspaces button {
+  padding: 0 5px;
+  border: none;
+  background: transparent;
 }
 
 window#waybar #workspaces button,
 window#waybar #workspaces button.active,
 window#waybar #workspaces button:hover {
   transition: none;
-}
-
-#workspaces button {
-  padding: 0 3px;
-  border: none;
-  background: transparent;
-}
-
-#workspaces button.active {
-  background: #e9164b;
   border-radius: 0px;
 }
 
-#workspaces button.active label {
-  color: #000000;
+#workspaces {
+  padding-left: 10px;
 }
 
 #clock {
-  color: #96f3ff;
   padding-right: 10px;
 }
 
-#network
-  #custom-power
-  #cpu
-  #memory
-  #battery
-  #network
-  #custom-weather
-  #user
-  #backlight
-  #pulseaudio
-  #pulseaudio.microphone
-  #bluetooth
-  #custom-music
-  #custom-audio_idle_inhibitor
-  #network
-  #tray {
-  color: #fff;
-}
-
-#battery {
-  color: #ffb3fa;
-}
-
-#backlight {
-  color: #ffe699;
-}
-
 #mpris {
-  color: #b3ffb4;
+  color: #66ff8f;
 }
 
-#pulseaudio {
-  color: #fec98f;
-}
-
-#pulseaudio.muted {
-  color: #ff5f5f;
-}
-
-#network {
-  color: #b3bbff;
-}
-
-#bluetooth {
-  color: #b3d3ff;
-}
-
-#cpu {
-  color: #dcffb3;
-}
-
-#memory {
-  color: #ffd3b3;
-}
-
-#temperature {
-  color: #e2cbf7;
-}
-
-#temperature.critical {
-  color: #ff5f5f;
-}
-
-#custom-fullscreen {
-  color: #f6ea2c;
-}
-
-#custom-headphones {
-  color: #f78ca7;
-}
-
-#network.disconnected {
-  color: #ff5f5f;
-}
-
-#network.disabled {
+#network.disabled,
+#battery.warning {
   color: #ffaa00;
+}
+
+#temperature.critical,
+#network.disconnected,
+#pulseaudio.muted,
+#battery.critical {
+  color: #ff3333;
+}
+
+#tray {
+  padding-right: 5px;
 }
