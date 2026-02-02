@@ -1,0 +1,134 @@
+# Kanagawa Wave theme for vivid
+# Author: rebelot (palette)
+# Upstream palette: https://github.com/rebelot/kanagawa.nvim
+colors:
+  # Core neutrals
+  sumiInk0: '16161d'
+  sumiInk1: '1f1f28'
+  sumiInk2: '2a2a37'
+  sumiInk3: '363646'
+  sumiInk4: '54546d'
+  fujiWhite: 'dcd7ba'
+  oldWhite: 'c8c093'
+  fujiGray: '727169'
+  lotusGray: 'dcd7ba'
+  # Blues / Aquas
+  waveBlue1: '223249'
+  waveBlue2: '2d4f67'
+  crystalBlue: '7e9cd8'
+  springBlue: '7fb4ca'
+  waveAqua1: '6a9589'
+  waveAqua2: '7aa89f'
+  # Greens / Yellows
+  autumnGreen: '76946a'
+  springGreen: '98bb6c'
+  boatYellow2: 'c0a36e'
+  carpYellow: 'e6c384'
+  # Reds / Accents
+  autumnRed: 'c34043'
+  samuraiRed: 'e82424'
+  peachRed: 'ff5d62'
+  surimiOrange: 'ffa066'
+  sakuraPink: 'd27e99'
+  # Purples
+  oniViolet: '957fb8'
+  springViolet1: '938aa9'
+  springViolet2: '9cabca'
+core:
+  normal_text:
+    foreground: fujiWhite
+  regular_file:
+    foreground: fujiWhite
+  reset_to_normal:
+    foreground: springViolet1
+  directory:
+    foreground: crystalBlue
+    font-style: bold
+  symlink:
+    foreground: waveAqua1
+  multi_hard_link:
+    foreground: waveAqua2
+  fifo:
+    foreground: boatYellow2
+    background: sumiInk0
+  socket:
+    foreground: oniViolet
+    background: sumiInk0
+    font-style: bold
+  door:
+    foreground: oniViolet
+    background: sumiInk0
+    font-style: bold
+  block_device:
+    foreground: carpYellow
+    background: sumiInk0
+    font-style: bold
+  character_device:
+    foreground: carpYellow
+    background: sumiInk0
+    font-style: bold
+  broken_symlink:
+    foreground: samuraiRed
+    background: sumiInk0
+    font-style: bold
+  missing_symlink_target:
+    foreground: autumnRed
+    background: sumiInk0
+  setuid:
+    foreground: fujiWhite
+    background: autumnRed
+  setgid:
+    foreground: sumiInk0
+    background: boatYellow2
+  file_with_capability:
+    foreground: surimiOrange
+  sticky_other_writable:
+    foreground: sumiInk0
+    background: springGreen
+  other_writable:
+    foreground: crystalBlue
+    background: springGreen
+  sticky:
+    foreground: fujiWhite
+    background: oniViolet
+  executable_file:
+    foreground: springGreen
+    font-style: bold
+text:
+  special:
+    foreground: surimiOrange
+  todo:
+    foreground: peachRed
+    font-style: bold
+  licenses:
+    foreground: boatYellow2
+  configuration:
+    foreground: springBlue
+  other:
+    foreground: springViolet1
+markup:
+  foreground: springViolet2
+programming:
+  foreground: oniViolet
+media:
+  image:
+    foreground: sakuraPink
+  audio:
+    foreground: waveAqua1
+  video:
+    foreground: surimiOrange
+    font-style: bold
+  fonts:
+    foreground: springViolet2
+  3d:
+    foreground: sakuraPink
+office:
+  foreground: boatYellow2
+archives:
+  foreground: autumnRed
+  font-style: bold
+executable:
+  foreground: springGreen
+  font-style: bold
+unimportant:
+  foreground: fujiGray

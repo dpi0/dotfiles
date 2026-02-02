@@ -1,0 +1,56 @@
+[mgr]
+ratio = [1, 5, 6]
+sort_by = "mtime"
+sort_reverse = true
+linemode = "size_and_mtime"
+sort_dir_first = false
+show_symlink = true
+scrolloff = 5
+
+[input]
+cursor_blink = false
+
+[preview]
+wrap = "no"
+max_width = 600
+max_height = 900
+image_quality = 70
+sixel_fraction = 15
+
+[opener]
+open = [{ run = 'xdg-open "$1"', desc = "Open", for = "linux" }]
+reveal = [
+  { run = 'xdg-open "$(dirname "$1")"', desc = "Reveal", for = "linux" },
+]
+extract = [{ run = 'ouch d -y "$@"', desc = "Extract here", for = "unix" }]
+play = [{ run = 'mpv --force-window "$@"', orphan = true, for = "unix" }]
+edit = [
+  { run = '${EDITOR:-nvim} "$@"', desc = "$EDITOR", block = true, for = "unix" }, # NOTE: Custom opener
+]
+pdf_open = [
+  { run = 'evince "$1"', desc = "Open PDF with Evince", for = "linux" }, # Custom opener
+]
+
+[open]
+prepend_rules = [
+  { name = "*.json", use = "edit" },           # Using that custom opener
+  { name = "*.pdf", use = "pdf_open" },
+  { name = "*.html", use = ["open", "edit"] },
+]
+
+[plugin]
+prepend_previewers = [
+  { mime = "application/*zip", run = "ouch" },
+  { mime = "application/x-tar", run = "ouch" },
+  { mime = "application/x-bzip2", run = "ouch" },
+  { mime = "application/x-7z-compressed", run = "ouch" },
+  { mime = "application/x-rar", run = "ouch" },
+  { mime = "application/x-xz", run = "ouch" },
+  { name = "video/*", mime = "video/*", run = "noop" },   # NOTE: Disables video preview
+  { mime = "{audio,image}/*", run = "mediainfo" },
+]
+
+prepend_preloaders = [
+  { mime = "{audio,image}/*", run = "mediainfo" },
+  { name = "video/*", mime = "video/*", run = "noop" },
+] # NOTE: Disables video preview
