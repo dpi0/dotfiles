@@ -5,6 +5,7 @@ fi
 
 ZSH_DATA_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/zsh"
 ZSH_PLUGINS_ROOT="$ZSH_DATA_ROOT/plugins"
+ZPLUGINDIR=$ZSH_PLUGINS_ROOT
 
 [[ -d "$ZSH_DATA_ROOT/powerlevel10k" ]] || git clone --depth=1 "https://github.com/romkatv/powerlevel10k.git" "$ZSH_DATA_ROOT/powerlevel10k"
 [[ -d "$ZSH_PLUGINS_ROOT/zsh_unplugged" ]] || git clone "https://github.com/mattmc3/zsh_unplugged" "$ZSH_PLUGINS_ROOT/zsh_unplugged"
