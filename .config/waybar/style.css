@@ -1,0 +1,54 @@
+* {
+  font-family: "SF Pro Display";
+  color: #ffe6f0;
+  background: #000;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 0px;
+}
+
+#workspaces button.active label {
+  color: #e9164b;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  border: none;
+  background: transparent;
+}
+
+window#waybar #workspaces button,
+window#waybar #workspaces button.active,
+window#waybar #workspaces button:hover {
+  transition: none;
+  border-radius: 0px;
+}
+
+#workspaces {
+  padding-left: 10px;
+}
+
+#clock {
+  padding-right: 10px;
+}
+
+#mpris {
+  color: #66ff8f;
+}
+
+#network.disabled,
+#battery.warning {
+  color: #ffaa00;
+}
+
+#temperature.critical,
+#network.disconnected,
+#pulseaudio.muted,
+#custom-screen-record,
+#battery.critical {
+  color: #ff3333;
+}
+
+#tray {
+  padding-right: 5px;
+}

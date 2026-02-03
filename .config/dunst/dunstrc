@@ -1,0 +1,36 @@
+# Reference: /etc/dunst/dunstrc
+
+[global]
+font = SF Pro Display 13
+origin = bottom-center
+notification_limit = 10 # Max number of notifications
+hide_duplicate_count = false # Hide the count of stacked notifications with the same content
+min_icon_size = 48
+max_icon_size = 256
+width = (0, 700) # Dynamic width from 0 to N
+mouse_left_click = close_current, do_action, open_url # Mouse left click will, close current notification, perform any action linked to it, open any URLs in it
+corner_radius = 10 # Border radius
+vertical_alignment = top # Text alighment
+
+[urgency_low]
+  background = "#000000DD"
+  foreground = "#5ded5d"
+  frame_color = "#000000DD"
+  highlight = "#000000DD"
+  default_icon = dialog-information
+  timeout = 4
+
+[urgency_normal]
+  background = "#000000DD"
+  foreground = "#5f90f2"
+  frame_color = "#000000DD"
+  highlight = "#000000DD"
+  default_icon = dialog-information
+  timeout = 6
+
+[urgency_critical]
+  background = "#000000DD"
+  foreground = "#f26060"
+  frame_color = "#000000DD"
+  highlight = "#000000DD"
+  timeout = 0

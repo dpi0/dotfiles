@@ -1,0 +1,8 @@
+// @theme "/home/dpi0/.dotfiles/rofi/default-dump.rasi"
+@theme "/home/dpi0/.dotfiles/rofi/themes/minimal-fullscreen.rasi"
+
+// TO UNSET: https://man.archlinux.org/man/rofi-keys.5.en#Unsetting_a_binding
+// KEYBINDS: https://man.archlinux.org/man/rofi-keys.5.en#Keyboard_Bindings
+configuration {
+  kb-remove-to-sol: "";
+}

@@ -1,0 +1,72 @@
+* {
+  font: "JetBrainsMono NF 15";
+  background: #080808CC;
+  box-background: #00000000;
+  accent-color: #E9164B;
+  highlight-search-text: #E9164B; // Search input text
+  foreground: #BFC8E0;
+  background-color: transparent;
+  text-color: @foreground;
+  spacing: 0;
+}
+
+window {
+  background-color: @background;
+  fullscreen: true;
+}
+
+mainbox {
+  background-color: @box-background;
+}
+
+inputbar {
+  children: [ "textbox-prompt-colon", "entry"];
+}
+
+textbox-prompt-colon {
+  enabled: true;
+  str: "# ";
+  text-color: @accent-color;
+  expand: false;
+}
+
+entry {
+  cursor-color: @accent-color;
+  cursor-width: 3px;
+  text-color: @highlight-search-text;
+}
+
+listview {
+  columns: 8;
+  spacing: 20px;
+  fixed-columns: true;
+  fixed-lines: true;
+}
+
+element {
+  orientation: vertical;
+  padding: 10px;
+  border-radius: 4px;
+  children: [element-icon, element-text];
+}
+
+element selected {
+  text-color: @accent-color;
+  background-color: #ffffff08;
+}
+
+element-icon {
+  size: 82px;
+}
+
+element-text {
+  horizontal-align: 0.5;
+  text-color: inherit;
+  highlight: bold underline #f30e79;  // NOTE: Found no way to have a variable here
+}
+
+configuration {
+  show-icons: true;
+  icon-theme: "Papirus";
+  case-smart: true;
+}

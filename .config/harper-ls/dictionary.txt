@@ -1,0 +1,14 @@
+CTRL
+JDK
+LUKS
+Qalculate
+Traefik
+besan
+dpi0
+masala
+paneer
+parallely
+paru
+replicasets
+roti
+systemd
