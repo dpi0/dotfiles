@@ -11,10 +11,12 @@ ZPLUGINDIR=$ZSH_PLUGINS_ROOT
 [[ -d "$ZSH_PLUGINS_ROOT/zsh_unplugged" ]] || git clone "https://github.com/mattmc3/zsh_unplugged" "$ZSH_PLUGINS_ROOT/zsh_unplugged"
 [[ -d "$ZSH_PLUGINS_ROOT/zsh-fzf-history-search" ]] || git clone --depth=1 https://github.com/joshskidmore/zsh-fzf-history-search "$ZSH_PLUGINS_ROOT/zsh-fzf-history-search"
 [[ -f "$ZSH_PLUGINS_ROOT/dirhistory/dirhistory.plugin.zsh" ]] || { mkdir -p "$ZSH_PLUGINS_ROOT/dirhistory" && curl -fsSL "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/refs/heads/master/plugins/dirhistory/dirhistory.plugin.zsh" -o "$ZSH_PLUGINS_ROOT/dirhistory/dirhistory.plugin.zsh"; }
+[[ -f "$ZSH_PLUGINS_ROOT/sudo/sudo.plugin.zsh" ]] || { mkdir -p "$ZSH_PLUGINS_ROOT/sudo" && curl -fsSL "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/refs/heads/master/plugins/sudo/sudo.plugin.zsh" -o "$ZSH_PLUGINS_ROOT/sudo/sudo.plugin.zsh"; }
 
 source "$ZSH_DATA_ROOT/powerlevel10k/powerlevel10k.zsh-theme"
 source "$ZSH_PLUGINS_ROOT/zsh_unplugged/zsh_unplugged.zsh"
 source "$ZSH_PLUGINS_ROOT/dirhistory/dirhistory.plugin.zsh"
+source "$ZSH_PLUGINS_ROOT/sudo/sudo.plugin.zsh"
 source "$ZSH_PLUGINS_ROOT/zsh-fzf-history-search/zsh-fzf-history-search.zsh"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
