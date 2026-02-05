@@ -41,6 +41,7 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+setopt autocd
 autoload -U compinit; compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
@@ -76,7 +77,7 @@ export FZF_DEFAULT_OPTS="
 
 [[ -d /opt/flutter/bin ]] && path+=(/opt/flutter/bin)
 [[ -d ${GOPATH:-$HOME/go}/bin ]] && path+=(${GOPATH:-$HOME/go}/bin)
-[[ -d $HOME/.dotfiles/scripts ]] && path=($HOME/.dotfiles/scripts $path)
+[[ -d $HOME//scripts ]] && path=($HOME/scripts $path)
 
 # EVAL
 
