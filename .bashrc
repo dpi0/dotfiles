@@ -54,6 +54,7 @@ bind -x '"\t": fzf_bash_completion'
 
 # FUNCTIONS
 
+# Ask whether to create a new directory and cd directly into it if yes
 sd() {
   [ -d "$1" ] || {
     printf "Directory '%s' does not exist. Create it? (Y/n): " "$1"
@@ -63,6 +64,7 @@ sd() {
   builtin cd -- "$1"
 }
 
+# List all docker image tags using "regctl"
 imagetags() {
   [ "$1" ] || {
     echo "Usage: imagetags IMAGE"
@@ -71,6 +73,7 @@ imagetags() {
   regctl tag ls "$1" | sort -V -r
 }
 
+# Use "cheat.sh" to fetch info for a tool
 what() {
   [ "$1" ] || {
     echo "Usage: what TOOL"
@@ -79,6 +82,7 @@ what() {
   curl "https://cheat.sh/$1"
 }
 
+# Tail logs with bat
 batf() {
   command -v bat >/dev/null && command -v tail >/dev/null || {
     echo "bat or tail not installed"
@@ -91,6 +95,7 @@ batf() {
   tail -f -- "$1" | bat -l "${1##*.}" --paging=never
 }
 
+# Find all files recursively in $PWD
 ff() {
   command -v nvim >/dev/null && command -v fd >/dev/null && command -v fzf >/dev/null || {
     echo "nvim, fd or fzf not installed"
@@ -112,6 +117,7 @@ ff() {
     --exclude .local/share 2>/dev/null | fzf --preview='bat --style=numbers --color=always --line-range :500 {}' --prompt="nvim> " | xargs -r nvim
 }
 
+# List recent zoxide directories (alternative to the default: zoxide query -i)
 jj() {
   command -v zoxide >/dev/null && command -v fzf >/dev/null || {
     echo "zoxide or fzf not installed"
@@ -122,6 +128,7 @@ jj() {
   builtin cd -- "$dir"
 }
 
+# Restart docker compose service in $PWD
 dr() {
   [[ "$1" == "-h" || "$1" == "--help" ]] && {
     echo "Usage: dr [SERVICE...]  Restart docker compose services."
@@ -186,7 +193,7 @@ alias c='clear'
 alias oc='opencode'
 alias h="helm"
 alias dd='echo "Use --> caligula - https://github.com/ifd3f/caligula"'
-alias cat="bat"
+alias cat="bat --plain"
 alias py="python3"
 alias d="docker"
 alias dpsa='docker ps -a --format "table {{.Names}}\t{{.Image}}\t{{.Status}}\t{{.ID}}\t{{if .Ports}}{{.Ports}}{{else}}-{{end}}"'

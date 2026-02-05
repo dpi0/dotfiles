@@ -138,6 +138,7 @@ batf() {
   tail -f -- "$1" | bat -l "${1##*.}" --paging=never
 }
 
+# Find all files recursively in $PWD
 ff() {
   command -v nvim fd fzf >/dev/null || { echo "nvim, fd or fzf not installed"; return 1 }
   fd --type f --hidden . \
@@ -160,6 +161,7 @@ ff() {
     xargs -r nvim
 }
 
+# List recent zoxide directories (alternative to the default: zoxide query -i)
 jj() {
   command -v zoxide fzf >/dev/null || { echo "zoxide or fzf not installed"; return 1 }
   local dir
