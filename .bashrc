@@ -36,10 +36,10 @@ export FZF_DEFAULT_OPTS="
 export PATH
 
 eval "$(zoxide init bash --cmd j)"
+eval "$(fzf --bash)"
 
 # KEYBINDS
 
-bind -x '"\C-r": __fzf_history__'
 bind '"\C-p": history-search-backward'
 bind '"\C-n": history-search-forward'
 bind '"\e[1;5C": forward-word'  # CTRL+Right
@@ -121,6 +121,34 @@ dr() {
     return
   }
   d compose down "$@" && d compose up -d "$@"
+}
+
+# Custom version of the "__fzf_history__()" generated from "fzf --bash", with no preview-window
+# Override the default function
+__fzf_history__() {
+  fzf_history
+}
+
+fzf_history() {
+  local output script
+  script='BEGIN { getc; $/ = "\n\t"; $HISTCOUNT = $ENV{last_hist} + 1 }
+          s/^[ *]//; s/\n/\n\t/gm;
+          print $HISTCOUNT - $. . "\t$_" if !$seen{$_}++'
+
+  output=$(
+    set +o pipefail
+    builtin fc -lnr -2147483648 |
+      last_hist=$(HISTTIMEFORMAT='' builtin history 1) perl -n -l0 -e "$script" |
+      FZF_DEFAULT_OPTS= \
+        fzf --no-preview --height=40% --reverse --scheme=history \
+        --bind=ctrl-r:toggle-sort,alt-r:toggle-raw \
+        --wrap-sign=$'\t↳ ' \
+        --highlight-line \
+        +m --read0
+  ) || return
+
+  READLINE_LINE=$(perl -pe 's/^\d*\t//' <<<"$output")
+  READLINE_POINT=${#READLINE_LINE}
 }
 
 # ALIASES
