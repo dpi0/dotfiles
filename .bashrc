@@ -1,3 +1,10 @@
+BASH_DATA_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/bash"
+BASH_PLUGINS_ROOT="$BASH_DATA_ROOT/plugins"
+
+[[ -d "$BASH_PLUGINS_ROOT/fzf-tab-completion" ]] || git clone --depth=1 https://github.com/lincheney/fzf-tab-completion "$BASH_PLUGINS_ROOT/fzf-tab-completion"
+
+source "$BASH_PLUGINS_ROOT/fzf-tab-completion/bash/fzf-bash-completion.sh"
+
 # OPTIONS
 
 PS1='\[\e[38;5;175m\]\u\[\e[90m\]@\[\e[38;5;147m\]\H\[\e[0m\] \[\e[90m\]in\[\e[0m\] \[\e[38;5;148;1m\]\w\[\e[0m\] \[\e[90;1m\]\[\e[0m\] '
@@ -26,7 +33,6 @@ export FZF_DEFAULT_OPTS="
   --layout=reverse
   --ansi
   --extended
-  --preview='bat --style=numbers --color=always --line-range :500 {}'
   --preview-window='right:50%'
   --bind ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,shift-up:preview-top,shift-down:preview-bottom
 "
@@ -44,6 +50,7 @@ bind '"\C-p": history-search-backward'
 bind '"\C-n": history-search-forward'
 bind '"\e[1;5C": forward-word'  # CTRL+Right
 bind '"\e[1;5D": backward-word' # CTRL+Left
+bind -x '"\t": fzf_bash_completion'
 
 # FUNCTIONS
 
@@ -102,7 +109,7 @@ ff() {
     --exclude .cache \
     --exclude .mozilla \
     --exclude .local/state \
-    --exclude .local/share 2>/dev/null | fzf --prompt="nvim> " | xargs -r nvim
+    --exclude .local/share 2>/dev/null | fzf --preview='bat --style=numbers --color=always --line-range :500 {}' --prompt="nvim> " | xargs -r nvim
 }
 
 jj() {
