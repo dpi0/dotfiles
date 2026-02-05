@@ -1,12 +1,12 @@
 # `~/.dotfiles`
 
-Install
+Clone and run
 
 ```bash
 stow .
 ```
 
-`./ly`: Stow manually `sudo stow -t / ly`
+For `ly/`, stow manually `sudo stow -t / ly`
 
 ## Bat
 
