@@ -35,6 +35,11 @@ export FZF_DEFAULT_OPTS="
   --extended
   --preview-window='right:50%'
   --bind ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,shift-up:preview-top,shift-down:preview-bottom
+  --color=bg+:#000000,fg+:#C8C093,hl+:#FFA066
+  --color=bg:#000000,fg:#89877f,hl:#938AA9
+  --color=info:#727169,prompt:#957FB8
+  --color=pointer:#98bb6c,marker:#d27e99,spinner:#6a9589
+  --color=border:#54546d,header:#938aa9
 "
 
 # PATH
