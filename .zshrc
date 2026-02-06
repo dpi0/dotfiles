@@ -85,9 +85,6 @@ export FZF_DEFAULT_OPTS="
 
 eval "$(zoxide init zsh --cmd j)"
 
-# Load plugins after your options, and don't use quotes for this variable
-plugin-load $ZSH_PLUGIN_REPOS
-
 # FUNCTIONS
 
 _has_wl_copy() { command -v wl-copy &>/dev/null }
@@ -193,6 +190,10 @@ bindkey -s '^[v' 'nvim .^M'                  # ALT+v - open neovim in $PWD
 bindkey -s '^[f' 'ff^M'                      # ALT+f - find files
 bindkey -s '^[e' 'jj^M'                      # ALT+j - zoxide+fzf
 bindkey -s ':' '\e[C'                        # ":" - hit forward-arrow (→)
+bindkey '^R' fzf_history_search              # Set this manually to prevent issues and conflicts
+
+# Load plugins right before your aliases, and don't use quotes for this variable
+plugin-load $ZSH_PLUGIN_REPOS
 
 # ALIASES
 
