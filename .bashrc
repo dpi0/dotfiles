@@ -139,7 +139,7 @@ dr() {
     echo "Usage: dr [SERVICE...]  Restart docker compose services."
     return
   }
-  d compose down "$@" && d compose up -d "$@"
+  docker compose down "$@" && docker compose up -d "$@"
 }
 
 # Custom version of the "__fzf_history__()" generated from "fzf --bash", with no preview-window
