@@ -1,3 +1,5 @@
+[[ $- != *i* ]] && return
+
 BASH_DATA_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/bash"
 BASH_PLUGINS_ROOT="$BASH_DATA_ROOT/plugins"
 
