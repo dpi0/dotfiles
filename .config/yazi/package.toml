@@ -33,6 +33,11 @@ use = "boydaihungst/mediainfo"
 rev = "ae2a1f1"
 hash = "b2afd25ad3ac851adf2a1b706d1a2add"
 
+[[plugin.deps]]
+use = "Ape/open-with-cmd"
+rev = "e3d430f"
+hash = "d29c1ffa99099181faf8c01d1f59aa4c"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:dracula"
 rev = "4a1802a"
