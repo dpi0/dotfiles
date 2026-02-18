@@ -9,6 +9,7 @@
     "custom/q0q",
     "custom/fullscreen",
     "tray",
+    "bluetooth",
     "memory",
     "temperature",
     "pulseaudio",
@@ -32,6 +33,10 @@
     "exec": "~/scripts/check-window-fullscreen-status-waybar.sh",
     "interval": 3,
     "tooltip": false,
+  },
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "",
   },
   "tray": {
     "spacing": 20,
